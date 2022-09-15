@@ -3,13 +3,11 @@
 namespace Jet_Smart_Filters\Bricks_Views\Elements;
 
 // If this file is called directly, abort.
-use Bricks\Helpers;
-
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-class Pagination extends \Jet_Engine\Bricks_Views\Elements\Base {
+class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Elements\Base {
 	// Element properties
 	public $category = 'general'; // Use predefined element category 'general'
 	public $name = 'jet-smart-filters-pagination'; // Make sure to prefix your elements
@@ -601,14 +599,6 @@ class Pagination extends \Jet_Engine\Bricks_Views\Elements\Base {
 		$controls['pages_mid_size']      = ! empty( $settings['pages_center_offset'] ) ? absint( $settings['pages_center_offset'] ) : 0;
 		$controls['pages_end_size']      = ! empty( $settings['pages_end_offset'] ) ? absint( $settings['pages_end_offset'] ) : 0;
 		$controls['provider_top_offset'] = ! empty( $settings['provider_top_offset'] ) ? absint( $settings['provider_top_offset'] ) : 0;
-
-//		$this->enqueue_scripts();
-
-		/*$render = $this->get_jet_render_instance();
-
-		if ( ! $render ) {
-			return esc_html__( 'Listing renderer class not found', 'jet-engine' );
-		}*/
 
 		echo "<div {$this->render_attributes( '_root' )}>";
 		printf(

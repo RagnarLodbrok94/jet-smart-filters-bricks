@@ -39,10 +39,11 @@ class Manager {
 	}
 
 	public function register_elements() {
+		require $this->component_path( 'elements/base.php' );
 
 		$element_files = array(
 			$this->component_path( 'elements/pagination.php' ),
-			/*$this->component_path( 'elements/dynamic-link.php' ),*/
+			$this->component_path( 'elements/select.php' ),
 		);
 
 		foreach ( $element_files as $file ) {
