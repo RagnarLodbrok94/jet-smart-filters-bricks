@@ -21,6 +21,8 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 			]
 		);
 
+		$this->register_filter_settings_controls( 'group' );
+
 		$this->register_filter_style_controls( 'group' );
 
 		$this->base_controls_section_filter_label( 'group' );
@@ -137,7 +139,7 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 
 		$this->end_jet_control_group();
 
-		$this->register_filter_settings_controls();
+		$this->register_filter_settings_controls( 'controls' );
 
 		$this->register_filter_style_controls( 'controls' );
 
@@ -187,8 +189,8 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 				$this->register_jet_control_group(
 					'section_label_style',
 					[
-						'title' => esc_html__( $this->get_label() . ': Label', 'jet-smart-filters' ),
-						'tab'   => 'style',
+						'title'    => esc_html__( $this->get_label() . ': Label', 'jet-smart-filters' ),
+						'tab'      => 'style',
 						'required' => [ 'show_label', '=', true ],
 					]
 				);
@@ -268,8 +270,8 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 				$this->register_jet_control_group(
 					'section_filter_apply_button_style',
 					[
-						'title' => esc_html__( $this->get_label() . ': Button', 'jet-smart-filters' ),
-						'tab'   => 'style',
+						'title'    => esc_html__( $this->get_label() . ': Button', 'jet-smart-filters' ),
+						'tab'      => 'style',
 						'required' => [ 'apply_button', '=', true ],
 					]
 				);
@@ -552,7 +554,7 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 	 *
 	 * @return void
 	 */
-	public function register_filter_settings_controls() {
+	public function register_filter_settings_controls( $name ) {
 
 	}
 
@@ -590,11 +592,11 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 		$this->register_jet_control(
 			'filters_position',
 			[
-				'tab'   => 'style',
-				'label' => esc_html__( 'Filters Position', 'jet-smart-filters' ),
-				'type'  => 'direction',
-				'default'  => 'column',
-				'css'   => [
+				'tab'     => 'style',
+				'label'   => esc_html__( 'Filters Position', 'jet-smart-filters' ),
+				'type'    => 'direction',
+				'default' => 'column',
+				'css'     => [
 					[
 						'property' => 'flex-direction',
 						'selector' => $css_scheme['list-wrapper'] . ', ' . $css_scheme['list-children'],
@@ -650,17 +652,17 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 					[
 						'property' => 'margin',
 						'selector' => $css_scheme['list-wrapper'] . ', ' . $css_scheme['list-item'] . ', ' . $css_scheme['list-children'],
-						'value' => '0',
+						'value'    => '0',
 					],
 					[
 						'property' => 'padding-top',
 						'selector' => $css_scheme['list-item'] . ', ' . $css_scheme['list-children'],
-						'value' => '0',
+						'value'    => '0',
 					],
 					[
 						'property' => 'margin-bottom',
 						'selector' => '.jet-checkboxes-list__item',
-						'value' => '0',
+						'value'    => '0',
 					],
 				],
 			]
