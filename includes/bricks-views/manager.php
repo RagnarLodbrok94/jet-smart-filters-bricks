@@ -44,6 +44,7 @@ class Manager {
 		$element_files = array(
 			$this->component_path( 'elements/pagination.php' ),
 			$this->component_path( 'elements/select.php' ),
+			$this->component_path( 'elements/check-range.php' ),
 		);
 
 		foreach ( $element_files as $file ) {

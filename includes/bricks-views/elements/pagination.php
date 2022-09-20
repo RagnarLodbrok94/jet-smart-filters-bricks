@@ -305,10 +305,10 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			[
 				'tab'   => 'style',
 				'label' => esc_html__( 'Background', 'jet-engine' ),
-				'type'  => 'background',
+				'type'  => 'color',
 				'css'   => [
 					[
-						'property' => 'background',
+						'property' => 'background-color',
 						'selector' => $css_scheme['pagination-link'] . ', ' . $css_scheme['pagination-dots'],
 					],
 				],

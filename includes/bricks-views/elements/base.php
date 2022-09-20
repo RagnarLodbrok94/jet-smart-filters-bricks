@@ -7,7 +7,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Base {
+class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Base {
 	public $jet_element_render = 'base';
 
 	// Set builder control groups
@@ -20,6 +20,8 @@ class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Ba
 				'tab'   => 'content',
 			]
 		);
+
+		$this->register_filter_style_controls( 'group' );
 
 		$this->base_controls_section_filter_label( 'group' );
 
@@ -130,11 +132,14 @@ class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Ba
 			]
 		);
 
+		// Include Additional Providers Settings
+		include jet_smart_filters_bricks()->plugin_path( 'includes/bricks-views/elements/common-controls/additional-providers.php' );
+
 		$this->end_jet_control_group();
 
 		$this->register_filter_settings_controls();
 
-		$this->register_filter_style_controls();
+		$this->register_filter_style_controls( 'controls' );
 
 		$css_scheme = apply_filters(
 			'jet-smart-filters/widgets/base/css-scheme',
@@ -182,8 +187,9 @@ class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Ba
 				$this->register_jet_control_group(
 					'section_label_style',
 					[
-						'title' => esc_html__( 'Label', 'jet-smart-filters' ),
+						'title' => esc_html__( $this->get_label() . ': Label', 'jet-smart-filters' ),
 						'tab'   => 'style',
+						'required' => [ 'show_label', '=', true ],
 					]
 				);
 				break;
@@ -194,7 +200,7 @@ class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Ba
 					'label_typography',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Typography', 'jet-engine' ),
+						'label' => esc_html__( 'Typography', 'jet-smart-filters' ),
 						'type'  => 'typography',
 						'css'   => [
 							[
@@ -209,7 +215,7 @@ class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Ba
 					'label_margin',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Margin', 'jet-engine' ),
+						'label' => esc_html__( 'Margin', 'jet-smart-filters' ),
 						'type'  => 'dimensions',
 						'css'   => [
 							[
@@ -224,7 +230,7 @@ class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Ba
 					'label_padding',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Padding', 'jet-engine' ),
+						'label' => esc_html__( 'Padding', 'jet-smart-filters' ),
 						'type'  => 'dimensions',
 						'css'   => [
 							[
@@ -239,7 +245,7 @@ class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Ba
 					'label_border',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Border', 'jet-engine' ),
+						'label' => esc_html__( 'Border', 'jet-smart-filters' ),
 						'type'  => 'border',
 						'css'   => [
 							[
@@ -262,8 +268,9 @@ class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Ba
 				$this->register_jet_control_group(
 					'section_filter_apply_button_style',
 					[
-						'title' => esc_html__( 'Button', 'jet-smart-filters' ),
+						'title' => esc_html__( $this->get_label() . ': Button', 'jet-smart-filters' ),
 						'tab'   => 'style',
+						'required' => [ 'apply_button', '=', true ],
 					]
 				);
 				break;
@@ -274,7 +281,7 @@ class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Ba
 					'filter_apply_button_typography',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Typography', 'jet-engine' ),
+						'label' => esc_html__( 'Typography', 'jet-smart-filters' ),
 						'type'  => 'typography',
 						'css'   => [
 							[
@@ -289,11 +296,11 @@ class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Ba
 					'filter_apply_button_background_color',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Background', 'jet-engine' ),
-						'type'  => 'background',
+						'label' => esc_html__( 'Background', 'jet-smart-filters' ),
+						'type'  => 'color',
 						'css'   => [
 							[
-								'property' => 'background',
+								'property' => 'background-color',
 								'selector' => $css_scheme['apply-filters-button'],
 							],
 						],
@@ -304,23 +311,19 @@ class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Ba
 					'filter_apply_button_alignment',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Alignment', 'jet-engine' ),
+						'label' => esc_html__( 'Alignment', 'jet-smart-filters' ),
 						'type'  => 'align-items',
 						'css'   => [
 							[
+								'property' => 'align-items',
+								'selector' => $css_scheme['apply-filters'],
+							],
+							[
 								'property' => 'align-self',
 								'selector' => $css_scheme['apply-filters-button'],
+								'value'    => 'auto',
 							],
 						],
-					]
-				);
-
-				$this->register_jet_control(
-					'filter_apply_button_indents',
-					[
-						'tab'   => 'style',
-						'type'  => 'separator',
-						'label' => esc_html__( 'Indents', 'jet-engine' ),
 					]
 				);
 
@@ -328,7 +331,7 @@ class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Ba
 					'filter_apply_button_margin',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Margin', 'jet-engine' ),
+						'label' => esc_html__( 'Margin', 'jet-smart-filters' ),
 						'type'  => 'dimensions',
 						'css'   => [
 							[
@@ -343,7 +346,7 @@ class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Ba
 					'filter_apply_button_padding',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Padding', 'jet-engine' ),
+						'label' => esc_html__( 'Padding', 'jet-smart-filters' ),
 						'type'  => 'dimensions',
 						'css'   => [
 							[
@@ -358,7 +361,7 @@ class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Ba
 					'filter_apply_button_border',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Border', 'jet-engine' ),
+						'label' => esc_html__( 'Border', 'jet-smart-filters' ),
 						'type'  => 'border',
 						'css'   => [
 							[
@@ -373,7 +376,7 @@ class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Ba
 					'filter_apply_button_box_shadow',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Box shadow', 'jet-engine' ),
+						'label' => esc_html__( 'Box shadow', 'jet-smart-filters' ),
 						'type'  => 'box-shadow',
 						'css'   => [
 							[
@@ -396,7 +399,7 @@ class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Ba
 				$this->register_jet_control_group(
 					'section_group_filters_style',
 					[
-						'title' => esc_html__( 'Grouped Filters', 'jet-smart-filters' ),
+						'title' => esc_html__( $this->get_label() . ': Grouped Filters', 'jet-smart-filters' ),
 						'tab'   => 'style',
 					]
 				);
@@ -405,25 +408,136 @@ class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Ba
 				$this->start_jet_control_group( 'section_group_filters_style' );
 
 				$this->register_jet_control(
-					'image_width',
+					'group_filters_content_position',
+					[
+						'tab'   => 'style',
+						'label' => esc_html__( 'Direction', 'jet-smart-filters' ),
+						'type'  => 'direction',
+						'css'   => [
+							[
+								'property' => 'flex-direction',
+								'selector' => '.jet-filters-group',
+							],
+							[
+								'property' => 'display',
+								'selector' => '.jet-filters-group',
+								'value'    => 'flex',
+							],
+						],
+					]
+				);
+
+				$this->register_jet_control(
+					'group_filters_align_main_axis',
+					[
+						'tab'      => 'style',
+						'label'    => esc_html__( 'Align main axis', 'jet-smart-filters' ),
+						'type'     => 'justify-content',
+						'css'      => [
+							[
+								'property' => 'justify-content',
+								'selector' => '.jet-filters-group',
+							],
+						],
+						'required' => [ 'group_filters_content_position', '=', 'row' ],
+					]
+				);
+
+				$this->register_jet_control(
+					'group_filters_wrap',
+					[
+						'tab'      => 'style',
+						'label'    => esc_html__( 'Flex wrap', 'bricks' ),
+						'type'     => 'select',
+						'options'  => [
+							'nowrap' => esc_html__( 'No wrap', 'jet-smart-filters' ),
+							'wrap'   => esc_html__( 'Wrap', 'jet-smart-filters' ),
+						],
+						'default'  => 'nowrap',
+						'css'      => [
+							[
+								'property' => 'flex-wrap',
+								'selector' => '.jet-filters-group',
+							],
+						],
+						'required' => [ 'group_filters_content_position', '=', 'row' ],
+					]
+				);
+
+				$this->register_jet_control(
+					'group_filters_item_width',
+					[
+						'tab'      => 'style',
+						'label'    => esc_html__( 'Group Item Width', 'jet-smart-filters' ),
+						'type'     => 'slider',
+						'units'    => [
+							'%'  => [
+								'min' => 10,
+								'max' => 100,
+							],
+							'px' => [
+								'min' => 50,
+								'max' => 500,
+							],
+						],
+						'default'  => '',
+						'css'      => [
+							[
+								'property' => 'max-width',
+								'selector' => '.jet-filters-group .jet-filter, .jet-filter .jet-filters-group .jet-select',
+							],
+							[
+								'property' => 'width',
+								'selector' => '.jet-filters-group .jet-filter, .jet-filter .jet-filters-group .jet-select',
+								'value'    => '100%',
+							],
+						],
+						'required' => [ 'group_filters_content_position', '=', 'row' ],
+					]
+				);
+
+				$this->register_jet_control(
+					'group_filters_horizontal_offset',
+					[
+						'tab'      => 'style',
+						'label'    => esc_html__( 'Horizontal Space Between', 'jet-smart-filters' ),
+						'type'     => 'slider',
+						'units'    => [
+							'px' => [
+								'min' => 0,
+								'max' => 100,
+							],
+						],
+						'default'  => '',
+						'css'      => [
+							[
+								'property' => 'column-gap',
+								'selector' => '.jet-filters-group',
+							],
+						],
+						'required' => [ 'group_filters_content_position', '=', 'row' ],
+					]
+				);
+
+				$this->register_jet_control(
+					'group_filters_vertical_offset',
 					[
 						'tab'     => 'style',
-						'label'   => esc_html__( 'Vertical Space Between', 'jet-engine' ),
+						'label'   => esc_html__( 'Vertical Space Between', 'jet-smart-filters' ),
 						'type'    => 'slider',
 						'units'   => [
 							'px' => [
-								'min' => 1,
+								'min' => 0,
 								'max' => 100,
 							],
 						],
 						'default' => '',
 						'css'     => [
 							[
-								'property' => 'margin-top',
-								'selector' => $css_scheme['filter'] . '+' . $css_scheme['filter'],
+								'property' => 'row-gap',
+								'selector' => '.jet-filters-group',
 							],
 						],
-
 					]
 				);
 
@@ -447,8 +561,156 @@ class Jet_Smart_Filters_Base_Widget extends \Jet_Engine\Bricks_Views\Elements\Ba
 	 *
 	 * @return void
 	 */
-	public function register_filter_style_controls() {
+	public function register_filter_style_controls( $name ) {
 
+	}
+
+	/**
+	 * Register filter style controls. Specific for each widget.
+	 *
+	 * @return void
+	 */
+	public function register_horizontal_layout_controls( $css_scheme ) {
+
+		/*$this->register_jet_control(
+			'filters_position',
+			[
+				'tab'     => 'style',
+				'label'   => esc_html__( 'Filters Position', 'jet-smart-filters' ),
+				'type'    => 'direction',
+				'css'     => [
+					[
+						'property' => 'display',
+						'selector' => $css_scheme['list-item'] . ', ' . $css_scheme['list-children'],
+					],
+				],
+			]
+		);*/
+
+		$this->register_jet_control(
+			'filters_position',
+			[
+				'tab'   => 'style',
+				'label' => esc_html__( 'Filters Position', 'jet-smart-filters' ),
+				'type'  => 'direction',
+				'default'  => 'column',
+				'css'   => [
+					[
+						'property' => 'flex-direction',
+						'selector' => $css_scheme['list-wrapper'] . ', ' . $css_scheme['list-children'],
+					],
+					[
+						'property' => 'display',
+						'selector' => $css_scheme['list-wrapper'] . ', ' . $css_scheme['list-children'],
+						'value'    => 'flex',
+					],
+					[
+						'property' => 'flex-wrap',
+						'selector' => $css_scheme['list-wrapper'] . ', ' . $css_scheme['list-children'],
+						'value'    => 'wrap',
+					],
+				],
+			]
+		);
+
+		$this->register_jet_control(
+			'filters_list_alignment',
+			[
+				'tab'      => 'style',
+				'label'    => esc_html__( 'Align main axis', 'jet-smart-filters' ),
+				'type'     => 'justify-content',
+				'css'      => [
+					[
+						'property' => 'justify-content',
+						'selector' => $css_scheme['list-wrapper'] . ', ' . $css_scheme['list-children'],
+					],
+				],
+				'required' => [ 'filters_position', '=', 'row' ],
+			]
+		);
+
+		$this->register_jet_control(
+			'filters_gap',
+			[
+				'tab'     => 'style',
+				'label'   => esc_html__( 'Gap', 'jet-smart-filters' ),
+				'type'    => 'slider',
+				'units'   => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'default' => '',
+				'css'     => [
+					[
+						'property' => 'gap',
+						'selector' => $css_scheme['list-wrapper'] . ', ' . $css_scheme['list-children'],
+					],
+					[
+						'property' => 'margin',
+						'selector' => $css_scheme['list-wrapper'] . ', ' . $css_scheme['list-item'] . ', ' . $css_scheme['list-children'],
+						'value' => '0',
+					],
+					[
+						'property' => 'padding-top',
+						'selector' => $css_scheme['list-item'] . ', ' . $css_scheme['list-children'],
+						'value' => '0',
+					],
+					[
+						'property' => 'margin-bottom',
+						'selector' => '.jet-checkboxes-list__item',
+						'value' => '0',
+					],
+				],
+			]
+		);
+
+		/*$this->register_jet_control(
+			'horizontal_layout_description',
+			[
+				'tab'   => 'style',
+				'label' => esc_html__( 'Horizontal Offset control works only with Line Filters Position', 'jet-smart-filters' ),
+				'type'  => 'info',
+			]
+		);*/
+
+		/*$this->register_jet_control(
+			'filters_space_between_horizontal',
+			[
+				'tab'     => 'style',
+				'label'   => esc_html__( 'Horizontal Offset', 'jet-smart-filters' ),
+				'type'    => 'slider',
+				'units'   => [
+					'px' => [
+						'min' => 0,
+						'max' => 40,
+					],
+				],
+				'default' => '',
+				'css'     => [
+					[
+						'property' => 'margin-top',
+					],
+				],
+
+			]
+		);*/
+
+		/*$this->register_jet_control(
+			'filters_list_alignment',
+			[
+				'tab'   => 'style',
+				'label' => esc_html__( 'Alignment', 'jet-smart-filters' ),
+				'type'  => 'text-align',
+				'css'   => [
+					[
+						'property' => 'text-align',
+						'selector' => $css_scheme['list-wrapper'],
+					],
+				],
+			]
+		);*/
 	}
 
 	// Render element HTML
