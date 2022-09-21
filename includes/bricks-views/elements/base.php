@@ -425,6 +425,11 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 								'selector' => '.jet-filters-group',
 								'value'    => 'flex',
 							],
+							[
+								'property' => 'margin-top',
+								'selector' => '.jet-filter',
+								'value'    => '0',
+							],
 						],
 					]
 				);

@@ -128,7 +128,7 @@ class Jet_Smart_Filters_Bricks_Radio extends Jet_Smart_Filters_Bricks_Base {
 					[
 						'tab'     => 'style',
 						'label'   => esc_html__( 'Show Radio', 'jet-smart-filters' ),
-						'type'    => 'radio',
+						'type'    => 'checkbox',
 						'default' => true,
 					]
 				);
