@@ -46,6 +46,7 @@ class Manager {
 			$this->component_path( 'elements/select.php' ),
 			$this->component_path( 'elements/check-range.php' ),
 			$this->component_path( 'elements/checkboxes.php' ),
+			$this->component_path( 'elements/radio.php' ),
 		);
 
 		foreach ( $element_files as $file ) {
