@@ -106,11 +106,12 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 		$this->register_jet_control(
 			'apply_button_text',
 			[
-				'tab'      => 'content',
-				'label'    => esc_html__( 'Apply button text', 'jet-smart-filters' ),
-				'type'     => 'text',
-				'default'  => esc_html__( 'Apply filter', 'jet-smart-filters' ),
-				'required' => [ 'apply_button', '=', true ],
+				'tab'            => 'content',
+				'label'          => esc_html__( 'Apply button text', 'jet-smart-filters' ),
+				'type'           => 'text',
+				'hasDynamicData' => false,
+				'default'        => esc_html__( 'Apply filter', 'jet-smart-filters' ),
+				'required'       => [ 'apply_button', '=', true ],
 			]
 		);
 
@@ -127,10 +128,11 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 		$this->register_jet_control(
 			'query_id',
 			[
-				'tab'         => 'content',
-				'label'       => esc_html__( 'Query ID', 'jet-smart-filters' ),
-				'type'        => 'text',
-				'description' => esc_html__( 'Set unique query ID if you use multiple widgets of same provider on the page. Same ID you need to set for filtered widget.', 'jet-smart-filters' ),
+				'tab'            => 'content',
+				'label'          => esc_html__( 'Query ID', 'jet-smart-filters' ),
+				'type'           => 'text',
+				'hasDynamicData' => false,
+				'description'    => esc_html__( 'Set unique query ID if you use multiple widgets of same provider on the page. Same ID you need to set for filtered widget.', 'jet-smart-filters' ),
 			]
 		);
 
@@ -724,6 +726,7 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 	public function render() {
 
 		jet_smart_filters()->set_filters_used();
+
 
 		$base_class      = $this->name;
 		$settings        = $this->parse_jet_render_attributes( $this->get_jet_settings() );
