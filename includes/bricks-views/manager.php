@@ -51,6 +51,7 @@ class Manager {
 			$this->component_path( 'elements/date-range.php' ),
 			$this->component_path( 'elements/active-filters.php' ),
 			$this->component_path( 'elements/active-tags.php' ),
+			$this->component_path( 'elements/alphabet.php' ),
 		);
 
 		foreach ( $element_files as $file ) {
