@@ -49,6 +49,7 @@ class Manager {
 			$this->component_path( 'elements/radio.php' ),
 			$this->component_path( 'elements/range.php' ),
 			$this->component_path( 'elements/date-range.php' ),
+			$this->component_path( 'elements/active-filters.php' ),
 		);
 
 		foreach ( $element_files as $file ) {

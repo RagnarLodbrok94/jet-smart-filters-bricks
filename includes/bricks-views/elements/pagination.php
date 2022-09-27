@@ -553,26 +553,6 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 
 	}
 
-	// Enqueue element styles and scripts
-	public function enqueue_scripts() {
-		wp_enqueue_style( 'jet-smart-filters-frontend' );
-	}
-
-	public function get_jet_render_instance() {
-
-		if ( ! $this->jet_element_render_instance ) {
-
-			/*$args = $this->parse_jet_render_attributes( $this->get_jet_settings() );
-
-			$this->jet_element_render_instance = jet_smart_filters()->filter_types->get_filter_instance(
-				$args['filter_id'], $this->jet_element_render, $args
-			);*/
-		}
-
-		return $this->jet_element_render_instance;
-
-	}
-
 	// Render element HTML
 	public function render() {
 		jet_smart_filters()->set_filters_used();
@@ -618,7 +598,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 		);
 
 		if ( bricks_is_builder_call() ) {
-			$pagination_filter_type = jet_smart_filters()->filter_types->get_filter_types( 'pagination' );
+			$pagination_filter_type = jet_smart_filters()->filter_types->get_filter_types( $this->jet_element_render );
 			$pagination_filter_type->render_pagination_sample( $controls );
 		}
 

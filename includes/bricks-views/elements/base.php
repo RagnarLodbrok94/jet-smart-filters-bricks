@@ -47,7 +47,7 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 			'content_provider',
 			[
 				'tab'     => 'content',
-				'label'   => esc_html__( 'Pagination for:', 'jet-smart-filters' ),
+				'label'   => esc_html__( 'This filter for', 'jet-smart-filters' ),
 				'type'    => 'select',
 				'options' => jet_smart_filters()->data->content_providers(),
 			]

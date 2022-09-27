@@ -53,7 +53,7 @@ $this->register_jet_control(
 	'calendar_body_bg',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Background color', 'jet-engine' ),
+		'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[
@@ -68,7 +68,7 @@ $this->register_jet_control(
 	'calendar_body_padding',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Padding', 'jet-engine' ),
+		'label' => esc_html__( 'Padding', 'jet-smart-filters' ),
 		'type'  => 'dimensions',
 		'css'   => [
 			[
@@ -83,7 +83,7 @@ $this->register_jet_control(
 	'calendar_body_border',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Border', 'jet-engine' ),
+		'label' => esc_html__( 'Border', 'jet-smart-filters' ),
 		'type'  => 'border',
 		'css'   => [
 			[
@@ -98,7 +98,7 @@ $this->register_jet_control(
 	'calendar_body_box_shadow',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Box shadow', 'jet-engine' ),
+		'label' => esc_html__( 'Box shadow', 'jet-smart-filters' ),
 		'type'  => 'box-shadow',
 		'css'   => [
 			[
@@ -117,7 +117,7 @@ $this->register_jet_control(
 	'calendar_title_typography',
 	[
 		'tab'     => 'style',
-		'label'   => esc_html__( 'Typography', 'jet-engine' ),
+		'label'   => esc_html__( 'Typography', 'jet-smart-filters' ),
 		'type'    => 'typography',
 		'exclude' => [
 			'text-align',
@@ -165,7 +165,7 @@ $this->register_jet_control(
 	'calendar_prev_next_normal_color',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'color', 'jet-engine' ),
+		'label' => esc_html__( 'color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[
@@ -188,7 +188,7 @@ $this->register_jet_control(
 	'calendar_header_bg',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Header background color', 'jet-engine' ),
+		'label' => esc_html__( 'Header background color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[
@@ -203,7 +203,7 @@ $this->register_jet_control(
 	'calendar_header_border',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Border', 'jet-engine' ),
+		'label' => esc_html__( 'Border', 'jet-smart-filters' ),
 		'type'  => 'border',
 		'css'   => [
 			[
@@ -219,7 +219,7 @@ $this->register_jet_control(
 	[
 		'tab'   => 'style',
 		'type'  => 'separator',
-		'label' => esc_html__( 'Day', 'jet-engine' ),
+		'label' => esc_html__( 'Day', 'jet-smart-filters' ),
 	]
 );
 
@@ -227,7 +227,7 @@ $this->register_jet_control(
 	'calendar_header_cells_padding',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Padding', 'jet-engine' ),
+		'label' => esc_html__( 'Padding', 'jet-smart-filters' ),
 		'type'  => 'dimensions',
 		'css'   => [
 			[
@@ -242,7 +242,7 @@ $this->register_jet_control(
 	'calendar_header_cells_border',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Border', 'jet-engine' ),
+		'label' => esc_html__( 'Border', 'jet-smart-filters' ),
 		'type'  => 'border',
 		'css'   => [
 			[
@@ -258,7 +258,7 @@ $this->register_jet_control(
 	[
 		'tab'   => 'style',
 		'type'  => 'separator',
-		'label' => esc_html__( 'Day Content', 'jet-engine' ),
+		'label' => esc_html__( 'Day Content', 'jet-smart-filters' ),
 	]
 );
 
@@ -330,12 +330,12 @@ $this->register_jet_control(
 	'calendar_content_bg',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Header background color', 'jet-engine' ),
+		'label' => esc_html__( 'Header background color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[
 				'property' => 'background-color',
-				'selector' => '.jet-smart-filters-datepicker-{{$this->id}}' . $css_scheme['calendar-body-header'],
+				'selector' => '.jet-smart-filters-datepicker-{{$this->id}}' . $css_scheme['calendar-body-content'],
 			],
 		],
 	]
@@ -345,12 +345,12 @@ $this->register_jet_control(
 	'calendar_content_border',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Border', 'jet-engine' ),
+		'label' => esc_html__( 'Border', 'jet-smart-filters' ),
 		'type'  => 'border',
 		'css'   => [
 			[
 				'property' => 'border',
-				'selector' => '.jet-smart-filters-datepicker-{{$this->id}}' . $css_scheme['calendar-body-header'],
+				'selector' => '.jet-smart-filters-datepicker-{{$this->id}}' . $css_scheme['calendar-body-content'],
 			],
 		],
 	]
@@ -361,7 +361,7 @@ $this->register_jet_control(
 	[
 		'tab'   => 'style',
 		'type'  => 'separator',
-		'label' => esc_html__( 'Day', 'jet-engine' ),
+		'label' => esc_html__( 'Day', 'jet-smart-filters' ),
 	]
 );
 
@@ -369,12 +369,12 @@ $this->register_jet_control(
 	'calendar_content_cells_padding',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Padding', 'jet-engine' ),
+		'label' => esc_html__( 'Padding', 'jet-smart-filters' ),
 		'type'  => 'dimensions',
 		'css'   => [
 			[
 				'property' => 'padding',
-				'selector' => '.jet-smart-filters-datepicker-{{$this->id}}' . $css_scheme['calendar-body-header'] . ' > tr > th',
+				'selector' => '.jet-smart-filters-datepicker-{{$this->id}}' . $css_scheme['calendar-body-content'] . ' > tr > td',
 			],
 		],
 	]
@@ -384,12 +384,12 @@ $this->register_jet_control(
 	'calendar_content_cells_border',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Border', 'jet-engine' ),
+		'label' => esc_html__( 'Border', 'jet-smart-filters' ),
 		'type'  => 'border',
 		'css'   => [
 			[
 				'property' => 'border',
-				'selector' => '.jet-smart-filters-datepicker-{{$this->id}}' . $css_scheme['calendar-body-header'] . ' > tr > th',
+				'selector' => '.jet-smart-filters-datepicker-{{$this->id}}' . $css_scheme['calendar-body-content'] . ' > tr > td',
 			],
 		],
 	]
@@ -400,7 +400,7 @@ $this->register_jet_control(
 	[
 		'tab'   => 'style',
 		'type'  => 'separator',
-		'label' => esc_html__( 'Day Content', 'jet-engine' ),
+		'label' => esc_html__( 'Day Content', 'jet-smart-filters' ),
 	]
 );
 
@@ -413,7 +413,7 @@ $this->register_jet_control(
 		'css'   => [
 			[
 				'property' => 'typography',
-				'selector' => '.jet-smart-filters-datepicker-{{$this->id}} ' . $css_scheme['calendar-body-header'] . ' > tr > th > span',
+				'selector' => '.jet-smart-filters-datepicker-{{$this->id}} ' . $css_scheme['calendar-body-content'] . ' > tr > td > span',
 			],
 		],
 	]
@@ -428,7 +428,7 @@ $this->register_jet_control(
 		'css'   => [
 			[
 				'property' => 'background-color',
-				'selector' => '.jet-smart-filters-datepicker-{{$this->id}} ' . $css_scheme['calendar-body-header'] . ' > tr > th > span',
+				'selector' => '.jet-smart-filters-datepicker-{{$this->id}} ' . $css_scheme['calendar-body-content'] . ' > tr > td > span',
 			],
 		],
 	]
@@ -443,7 +443,7 @@ $this->register_jet_control(
 		'css'   => [
 			[
 				'property' => 'padding',
-				'selector' => '.jet-smart-filters-datepicker-{{$this->id}} ' . $css_scheme['calendar-body-header'] . ' > tr > th > span',
+				'selector' => '.jet-smart-filters-datepicker-{{$this->id}} ' . $css_scheme['calendar-body-content'] . ' > tr > td > span',
 			],
 		],
 	]
@@ -458,8 +458,116 @@ $this->register_jet_control(
 		'css'   => [
 			[
 				'property' => 'border',
-				'selector' => '.jet-smart-filters-datepicker-{{$this->id}} ' . $css_scheme['calendar-body-header'] . ' > tr > th > span',
+				'selector' => '.jet-smart-filters-datepicker-{{$this->id}} ' . $css_scheme['calendar-body-content'] . ' > tr > td > span',
 			],
+		],
+	]
+);
+
+$this->register_jet_control(
+	'calendar_content_cells_content_current',
+	[
+		'tab'   => 'style',
+		'type'  => 'separator',
+		'label' => esc_html__( 'Current Day', 'jet-smart-filters' ),
+	]
+);
+
+$this->register_jet_control(
+	'calendar_content_cells_content_current_color',
+	[
+		'tab'   => 'style',
+		'label' => esc_html__( 'Color', 'jet-smart-filters' ),
+		'type'  => 'color',
+		'css'   => [
+			[
+				'property' => 'color',
+				'selector' => '.jet-smart-filters-datepicker-{{$this->id}} ' . $css_scheme['calendar-body-content'] . ' > tr > td > *',
+			]
+		],
+	]
+);
+
+$this->register_jet_control(
+	'calendar_content_cells_content_current_bg',
+	[
+		'tab'   => 'style',
+		'label' => esc_html__( 'Background Color', 'jet-smart-filters' ),
+		'type'  => 'color',
+		'css'   => [
+			[
+				'property' => 'background-color',
+				'selector' => '.jet-smart-filters-datepicker-{{$this->id}} ' . $css_scheme['calendar-body-content'] . ' > tr > td > *',
+			]
+		],
+	]
+);
+
+$this->register_jet_control(
+	'calendar_content_cells_content_current_border_color',
+	[
+		'tab'   => 'style',
+		'label' => esc_html__( 'Border Color', 'jet-smart-filters' ),
+		'type'  => 'color',
+		'css'   => [
+			[
+				'property' => 'border-color',
+				'selector' => '.jet-smart-filters-datepicker-{{$this->id}} ' . $css_scheme['calendar-body-content'] . ' > tr > td > *',
+			]
+		],
+	]
+);
+
+$this->register_jet_control(
+	'calendar_content_cells_content_active',
+	[
+		'tab'   => 'style',
+		'type'  => 'separator',
+		'label' => esc_html__( 'Active Day', 'jet-smart-filters' ),
+	]
+);
+
+$this->register_jet_control(
+	'calendar_content_cells_content_active_color',
+	[
+		'tab'   => 'style',
+		'label' => esc_html__( 'Color', 'jet-smart-filters' ),
+		'type'  => 'color',
+		'css'   => [
+			[
+				'property' => 'color',
+				'selector' => '.jet-smart-filters-datepicker-{{$this->id}} ' . $css_scheme['calendar-body-content'] . ' > tr > td > *',
+			]
+		],
+	]
+);
+
+$this->register_jet_control(
+	'calendar_content_cells_content_active_bg',
+	[
+		'tab'   => 'style',
+		'label' => esc_html__( 'Background Color', 'jet-smart-filters' ),
+		'type'  => 'color',
+		'css'   => [
+			[
+				'property' => 'background-color',
+				'selector' => '.jet-smart-filters-datepicker-{{$this->id}} ' . $css_scheme['calendar-body-content'] . ' > tr > td > *',
+			]
+		],
+	]
+);
+
+$this->register_jet_control(
+	'calendar_content_cells_content_active_border_color',
+	[
+		'tab'   => 'style',
+		'label' => esc_html__( 'Border Color', 'jet-smart-filters' ),
+		'type'  => 'color',
+		'css'   => [
+			[
+				'property' => 'border-color',
+				'selector' => '.jet-smart-filters-datepicker-{{$this->id}} ' . $css_scheme['calendar-body-content'] . ' > tr > td > *',
+			]
 		],
 	]
 );

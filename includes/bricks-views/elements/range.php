@@ -390,6 +390,11 @@ class Jet_Smart_Filters_Bricks_Range extends Jet_Smart_Filters_Bricks_Base {
 						'tab'     => 'style',
 						'label'   => esc_html__( 'Alignment', 'jet-smart-filters' ),
 						'type'    => 'justify-content',
+						'exclude' => [
+							'space-between',
+							'space-around',
+							'space-evenly',
+						],
 						'css'     => [
 							[
 								'property' => 'justify-content',
@@ -400,11 +405,6 @@ class Jet_Smart_Filters_Bricks_Range extends Jet_Smart_Filters_Bricks_Base {
 								'selector' => $css_scheme['inputs'],
 								'value'    => 'flex',
 							],
-						],
-						'exclude' => [
-							'space-between',
-							'space-around',
-							'space-evenly',
 						],
 					]
 				);

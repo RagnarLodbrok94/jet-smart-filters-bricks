@@ -14,7 +14,7 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 	public $category = 'general'; // Use predefined element category 'general'
 	public $name = 'jet-smart-filters-date-range'; // Make sure to prefix your elements
 	public $icon = 'ti-filter'; // Themify icon font class
-	public $css_selector = null; //'.jet-smart-filters-date-range'; // Default CSS selector
+	public $css_selector = '.jet-smart-filters-date-range'; // Default CSS selector
 	public $scripts = []; // Script(s) run when element is rendered on frontend or updated in builder
 
 	public $jet_element_render = 'date-range';
@@ -125,7 +125,7 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 			'content_provider',
 			[
 				'tab'     => 'content',
-				'label'   => esc_html__( 'Pagination for:', 'jet-smart-filters' ),
+				'label'   => esc_html__( 'This filter for', 'jet-smart-filters' ),
 				'type'    => 'select',
 				'options' => jet_smart_filters()->data->content_providers(),
 			]
@@ -763,7 +763,7 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 
 		include jet_smart_filters()->get_template( 'common/filter-label.php' );
 
-		jet_smart_filters()->filter_types->render_filter_template( $this->get_widget_fiter_type(), $filter_template_args );
+		jet_smart_filters()->filter_types->render_filter_template( $this->jet_element_render, $filter_template_args );
 
 		echo '</div>';
 
