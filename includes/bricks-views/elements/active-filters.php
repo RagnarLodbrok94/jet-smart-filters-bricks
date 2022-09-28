@@ -2,6 +2,11 @@
 
 namespace Jet_Smart_Filters\Bricks_Views\Elements;
 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
 class Jet_Smart_Filters_Bricks_Active_Filters extends \Jet_Engine\Bricks_Views\Elements\Base {
 	// Element properties
 	public $category = 'general'; // Use predefined element category 'general'
