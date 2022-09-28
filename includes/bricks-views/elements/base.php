@@ -297,35 +297,15 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 				);
 
 				$this->register_jet_control(
-					'filter_apply_button_background_color',
+					'filter_apply_button_bg_color',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Background', 'jet-smart-filters' ),
+						'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
 								'property' => 'background-color',
 								'selector' => $css_scheme['apply-filters-button'],
-							],
-						],
-					]
-				);
-
-				$this->register_jet_control(
-					'filter_apply_button_alignment',
-					[
-						'tab'   => 'style',
-						'label' => esc_html__( 'Alignment', 'jet-smart-filters' ),
-						'type'  => 'align-items',
-						'css'   => [
-							[
-								'property' => 'align-items',
-								'selector' => $css_scheme['apply-filters'],
-							],
-							[
-								'property' => 'align-self',
-								'selector' => $css_scheme['apply-filters-button'],
-								'value'    => 'auto',
 							],
 						],
 					]
@@ -386,6 +366,21 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 							[
 								'property' => 'box-shadow',
 								'selector' => $css_scheme['apply-filters-button'],
+							],
+						],
+					]
+				);
+
+				$this->register_jet_control(
+					'filter_apply_button_alignment',
+					[
+						'tab'   => 'style',
+						'label' => esc_html__( 'Alignment', 'jet-smart-filters' ),
+						'type'  => 'align-items',
+						'css'   => [
+							[
+								'property' => 'align-items',
+								'selector' => $css_scheme['apply-filters'],
 							],
 						],
 					]

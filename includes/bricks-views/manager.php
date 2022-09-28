@@ -52,6 +52,7 @@ class Manager {
 			$this->component_path( 'elements/active-filters.php' ),
 			$this->component_path( 'elements/active-tags.php' ),
 			$this->component_path( 'elements/alphabet.php' ),
+			$this->component_path( 'elements/apply-button.php' ),
 		);
 
 		foreach ( $element_files as $file ) {
