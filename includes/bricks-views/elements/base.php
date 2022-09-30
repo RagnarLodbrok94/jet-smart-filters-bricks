@@ -9,6 +9,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Base {
 	public $jet_element_render = 'base';
+	public $filter_id_multiple = true;
 
 	// Set builder control groups
 	public function set_control_groups() {
@@ -29,7 +30,9 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 
 		$this->base_controls_section_filter_apply_button( 'group' );
 
-		$this->base_controls_section_filter_group( 'group' );
+		if ( $this->filter_id_multiple ) {
+			$this->base_controls_section_filter_group( 'group' );
+		}
 
 	}
 
@@ -40,7 +43,13 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 
 		$this->register_jet_control(
 			'filter_id',
-			$this->get_filter_control_settings()
+			[
+				'label'       => esc_html__( 'Select filter', 'jet-smart-filters' ),
+				'type'        => 'select',
+				'placeholder' => esc_html__( 'Select...', 'jet-smart-filters' ),
+				'multiple'    => $this->filter_id_multiple,
+				'options'     => jet_smart_filters()->data->get_filters_by_type( $this->jet_element_render ),
+			]
 		);
 
 		$this->register_jet_control(
@@ -125,6 +134,21 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 			]
 		);
 
+		if ( $this->name === 'jet-smart-filters-rating' ) {
+			$this->register_jet_control(
+				'rating_icon',
+				[
+					'tab'      => 'content',
+					'label'    => esc_html__( 'Rating icon', 'jet-smart-filters' ),
+					'type'     => 'icon',
+					'default' => [
+						'library' => 'fa', // fontawesome/ionicons/themify
+						'icon' => 'fa fa-star',    // Example: Themify icon class
+					],
+				]
+			);
+		}
+
 		$this->register_jet_control(
 			'query_id',
 			[
@@ -159,7 +183,9 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 
 		$this->base_controls_section_filter_apply_button( 'controls', $css_scheme );
 
-		$this->base_controls_section_filter_group( 'controls', $css_scheme );
+		if ( $this->filter_id_multiple ) {
+			$this->base_controls_section_filter_group( 'controls', $css_scheme );
+		}
 
 	}
 
@@ -168,7 +194,7 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 	 *
 	 * @return array
 	 */
-	public function get_filter_control_settings() {
+	/*public function get_filter_control_settings() {
 		return [
 			'label'       => esc_html__( 'Select filter', 'jet-smart-filters' ),
 			'type'        => 'select',
@@ -176,7 +202,7 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 			'multiple'    => true,
 			'options'     => jet_smart_filters()->data->get_filters_by_type( $this->jet_element_render ),
 		];
-	}
+	}*/
 
 	/**
 	 * Returns widget filter type

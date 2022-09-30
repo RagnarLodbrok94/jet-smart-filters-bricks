@@ -149,10 +149,10 @@ class Jet_Smart_Filters_Bricks_Checkboxes extends Jet_Smart_Filters_Bricks_Base 
 				);
 
 				$this->register_jet_control(
-					'item_normal_background_color',
+					'item_normal_bg',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Background', 'jet-smart-filters' ),
+						'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[

@@ -113,12 +113,13 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 
 		$this->register_jet_control(
 			'filter_id',
-			array_merge(
-				$this->get_filter_control_settings(),
-				[
-					'multiple' => false,
-				]
-			)
+			[
+				'label'       => esc_html__( 'Select filter', 'jet-smart-filters' ),
+				'type'        => 'select',
+				'placeholder' => esc_html__( 'Select...', 'jet-smart-filters' ),
+				'multiple'    => false,
+				'options'     => jet_smart_filters()->data->get_filters_by_type( $this->jet_element_render ),
+			]
 		);
 
 		$this->register_jet_control(
@@ -184,7 +185,6 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 				'tab'      => 'content',
 				'label'    => esc_html__( 'Apply button icon', 'jet-smart-filters' ),
 				'type'     => 'icon',
-				'default'  => '',
 				'required' => [ 'hide_apply_button', '=', false ],
 			]
 		);
