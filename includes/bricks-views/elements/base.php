@@ -722,6 +722,13 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 
 		jet_smart_filters()->set_filters_used();
 
+		if ( empty( $this->get_jet_settings( 'filter_id' ) ) ) {
+			echo 'Please select filter to show';
+
+			return;
+		}
+
+		$this->enqueue_scripts();
 
 		$base_class      = $this->name;
 		$settings        = $this->parse_jet_render_attributes( $this->get_jet_settings() );
@@ -729,14 +736,6 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 		$show_counter    = false;
 		$show_items_rule = 'show';
 		$group           = false;
-
-		if ( empty( $settings['filter_id'] ) ) {
-			/* if ( Plugin::instance()->editor->is_edit_mode() ) {
-				echo '<div></div>';
-			} */
-
-			return;
-		}
 
 		$filter_ids = $settings['filter_id'];
 

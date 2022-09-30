@@ -440,10 +440,10 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 				);
 
 				$this->register_jet_control(
-					'date_range_input_background_color',
+					'date_range_input_bg',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Background', 'jet-smart-filters' ),
+						'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
@@ -547,10 +547,10 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 				);
 
 				$this->register_jet_control(
-					'filter_apply_button_background_color',
+					'filter_apply_button_bg',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Background', 'jet-smart-filters' ),
+						'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
@@ -715,9 +715,7 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 		$settings   = $this->parse_jet_render_attributes( $this->get_jet_settings() );
 
 		if ( empty( $settings['filter_id'] ) ) {
-			/* if ( Plugin::instance()->editor->is_edit_mode() ) {
-				echo '<div></div>';
-			} */
+			echo 'Please select filter to show';
 
 			return;
 		}

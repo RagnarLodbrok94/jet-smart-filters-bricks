@@ -54,6 +54,7 @@ class Manager {
 			$this->component_path( 'elements/alphabet.php' ),
 			$this->component_path( 'elements/apply-button.php' ),
 			$this->component_path( 'elements/color-image.php' ),
+			$this->component_path( 'elements/date-period.php' ),
 		);
 
 		foreach ( $element_files as $file ) {

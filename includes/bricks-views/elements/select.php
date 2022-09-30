@@ -3,8 +3,6 @@
 namespace Jet_Smart_Filters\Bricks_Views\Elements;
 
 // If this file is called directly, abort.
-use Jet_Engine\Bricks_Views\Helpers\Preview;
-
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
