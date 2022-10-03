@@ -142,8 +142,8 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 					'label'    => esc_html__( 'Rating icon', 'jet-smart-filters' ),
 					'type'     => 'icon',
 					'default' => [
-						'library' => 'fa', // fontawesome/ionicons/themify
-						'icon' => 'fa fa-star',    // Example: Themify icon class
+						'library' => 'fa',
+						'icon' => 'fa fa-star',
 					],
 				]
 			);
@@ -187,28 +187,6 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 			$this->base_controls_section_filter_group( 'controls', $css_scheme );
 		}
 
-	}
-
-	/**
-	 * Returns filter control settings
-	 *
-	 * @return array
-	 */
-	/*public function get_filter_control_settings() {
-		return [
-			'label'       => esc_html__( 'Select filter', 'jet-smart-filters' ),
-			'type'        => 'select',
-			'placeholder' => esc_html__( 'Select...', 'jet-smart-filters' ),
-			'multiple'    => true,
-			'options'     => jet_smart_filters()->data->get_filters_by_type( $this->jet_element_render ),
-		];
-	}*/
-
-	/**
-	 * Returns widget filter type
-	 */
-	public function get_widget_fiter_type() {
-		return str_replace( 'jet-smart-filters-', '', $this->name );
 	}
 
 	public function base_controls_section_filter_label( $name, $css_scheme = null ) {
@@ -443,16 +421,6 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 								'property' => 'flex-direction',
 								'selector' => '.jet-filters-group',
 							],
-							[
-								'property' => 'display',
-								'selector' => '.jet-filters-group',
-								'value'    => 'flex',
-							],
-							[
-								'property' => 'margin-top',
-								'selector' => '.jet-filter',
-								'value'    => '0',
-							],
 						],
 					]
 				);
@@ -510,7 +478,6 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 								'max' => 500,
 							],
 						],
-						'default'  => '',
 						'css'      => [
 							[
 								'property' => 'max-width',
@@ -538,7 +505,7 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 								'max' => 100,
 							],
 						],
-						'default'  => '',
+						'default'  => '12px',
 						'css'      => [
 							[
 								'property' => 'column-gap',
@@ -561,7 +528,7 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 								'max' => 100,
 							],
 						],
-						'default' => '',
+						'default'  => '12px',
 						'css'     => [
 							[
 								'property' => 'row-gap',
@@ -602,21 +569,6 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 	 */
 	public function register_horizontal_layout_controls( $css_scheme ) {
 
-		/*$this->register_jet_control(
-			'filters_position',
-			[
-				'tab'     => 'style',
-				'label'   => esc_html__( 'Filters Position', 'jet-smart-filters' ),
-				'type'    => 'direction',
-				'css'     => [
-					[
-						'property' => 'display',
-						'selector' => $css_scheme['list-item'] . ', ' . $css_scheme['list-children'],
-					],
-				],
-			]
-		);*/
-
 		$this->register_jet_control(
 			'filters_position',
 			[
@@ -628,16 +580,6 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 					[
 						'property' => 'flex-direction',
 						'selector' => $css_scheme['list-wrapper'] . ', ' . $css_scheme['list-children'],
-					],
-					[
-						'property' => 'display',
-						'selector' => $css_scheme['list-wrapper'] . ', ' . $css_scheme['list-children'],
-						'value'    => 'flex',
-					],
-					[
-						'property' => 'flex-wrap',
-						'selector' => $css_scheme['list-wrapper'] . ', ' . $css_scheme['list-children'],
-						'value'    => 'wrap',
 					],
 				],
 			]
@@ -677,70 +619,9 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 						'property' => 'gap',
 						'selector' => $css_scheme['list-wrapper'] . ', ' . $css_scheme['list-children'],
 					],
-					[
-						'property' => 'margin',
-						'selector' => $css_scheme['list-wrapper'] . ', ' . $css_scheme['list-item'] . ', ' . $css_scheme['list-children'],
-						'value'    => '0',
-					],
-					[
-						'property' => 'padding-top',
-						'selector' => $css_scheme['list-item'] . ', ' . $css_scheme['list-children'],
-						'value'    => '0',
-					],
-					[
-						'property' => 'margin-bottom',
-						'selector' => '.jet-checkboxes-list__item',
-						'value'    => '0',
-					],
 				],
 			]
 		);
-
-		/*$this->register_jet_control(
-			'horizontal_layout_description',
-			[
-				'tab'   => 'style',
-				'label' => esc_html__( 'Horizontal Offset control works only with Line Filters Position', 'jet-smart-filters' ),
-				'type'  => 'info',
-			]
-		);*/
-
-		/*$this->register_jet_control(
-			'filters_space_between_horizontal',
-			[
-				'tab'     => 'style',
-				'label'   => esc_html__( 'Horizontal Offset', 'jet-smart-filters' ),
-				'type'    => 'slider',
-				'units'   => [
-					'px' => [
-						'min' => 0,
-						'max' => 40,
-					],
-				],
-				'default' => '',
-				'css'     => [
-					[
-						'property' => 'margin-top',
-					],
-				],
-
-			]
-		);*/
-
-		/*$this->register_jet_control(
-			'filters_list_alignment',
-			[
-				'tab'   => 'style',
-				'label' => esc_html__( 'Alignment', 'jet-smart-filters' ),
-				'type'  => 'text-align',
-				'css'   => [
-					[
-						'property' => 'text-align',
-						'selector' => $css_scheme['list-wrapper'],
-					],
-				],
-			]
-		);*/
 	}
 
 	// Render element HTML

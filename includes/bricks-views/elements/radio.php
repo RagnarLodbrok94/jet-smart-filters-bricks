@@ -332,11 +332,6 @@ class Jet_Smart_Filters_Bricks_Radio extends Jet_Smart_Filters_Bricks_Base {
 								'property' => 'margin-right',
 								'selector' => $css_scheme['radio'],
 							],
-							[
-								'property' => 'margin-top',
-								'selector' => $css_scheme['radio'],
-								'value'    => '0',
-							],
 						],
 					]
 				);

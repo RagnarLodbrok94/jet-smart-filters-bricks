@@ -332,11 +332,6 @@ class Jet_Smart_Filters_Bricks_Checkboxes extends Jet_Smart_Filters_Bricks_Base 
 								'property' => 'margin-right',
 								'selector' => $css_scheme['checkbox'],
 							],
-							[
-								'property' => 'margin-top',
-								'selector' => $css_scheme['checkbox'],
-								'value'    => '0',
-							],
 						],
 					]
 				);

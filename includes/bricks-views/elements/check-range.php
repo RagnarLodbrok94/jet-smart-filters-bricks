@@ -119,33 +119,6 @@ class Jet_Smart_Filters_Bricks_Check_Range extends Jet_Smart_Filters_Bricks_Base
 
 				$this->register_horizontal_layout_controls( $css_scheme );
 
-				/*$this->register_jet_control(
-					'items_space_between',
-					[
-						'tab'     => 'style',
-						'label'   => esc_html__( 'Space Between', 'jet-smart-filters' ),
-						'type'    => 'slider',
-						'units'   => [
-							'px' => [
-								'min' => 0,
-								'max' => 50,
-							],
-						],
-						'default' => '',
-						'css'     => [
-							[
-								'property' => 'margin-bottom',
-								'selector' => $css_scheme['item'] . ':not(:last-child)',
-							],
-							[
-								'property' => 'padding-top',
-								'selector' => $css_scheme['item'] . ':not(:first-child)',
-							],
-						],
-
-					]
-				);*/
-
 				$this->end_jet_control_group();
 
 				$this->start_jet_control_group( 'section_item_style' );
@@ -358,11 +331,6 @@ class Jet_Smart_Filters_Bricks_Check_Range extends Jet_Smart_Filters_Bricks_Base
 							[
 								'property' => 'margin-right',
 								'selector' => $css_scheme['checkbox'],
-							],
-							[
-								'property' => 'margin-top',
-								'selector' => $css_scheme['checkbox'],
-								'value'    => '0',
 							],
 						],
 					]

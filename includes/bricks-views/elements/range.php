@@ -360,11 +360,6 @@ class Jet_Smart_Filters_Bricks_Range extends Jet_Smart_Filters_Bricks_Base {
 								'property' => 'gap',
 								'selector' => $css_scheme['inputs-container'],
 							],
-							[
-								'property' => 'margin',
-								'selector' => $css_scheme['input-group'],
-								'value'    => '0',
-							],
 						],
 					]
 				);
@@ -399,11 +394,6 @@ class Jet_Smart_Filters_Bricks_Range extends Jet_Smart_Filters_Bricks_Base {
 							[
 								'property' => 'justify-content',
 								'selector' => $css_scheme['inputs'],
-							],
-							[
-								'property' => 'display',
-								'selector' => $css_scheme['inputs'],
-								'value'    => 'flex',
 							],
 						],
 					]

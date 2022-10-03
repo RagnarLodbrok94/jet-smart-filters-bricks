@@ -353,29 +353,6 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 					[
 						'property' => 'gap',
 					],
-					[
-						'property' => 'display',
-						'value'    => 'flex',
-					],
-					[
-						'property' => 'flex-wrap',
-						'value'    => 'wrap',
-					],
-					[
-						'property' => 'margin-right',
-						'selector' => $css_scheme['pagination-item'],
-						'value'    => '0',
-					],
-					[
-						'property' => 'margin-bottom',
-						'selector' => $css_scheme['pagination-item'],
-						'value'    => '0',
-					],
-					[
-						'property' => 'margin-left',
-						'selector' => $css_scheme['pagination-item'],
-						'value'    => '0',
-					],
 				],
 			]
 		);
@@ -389,10 +366,6 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 				'css'         => [
 					[
 						'property' => 'justify-content',
-					],
-					[
-						'property' => 'display',
-						'value'    => 'flex',
 					],
 				],
 			]
