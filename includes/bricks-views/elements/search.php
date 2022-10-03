@@ -2,26 +2,26 @@
 
 namespace Jet_Smart_Filters\Bricks_Views\Elements;
 
+// If this file is called directly, abort.
 use Bricks\Element;
 
-// If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base {
+class Jet_Smart_Filters_Bricks_Search extends Jet_Smart_Filters_Bricks_Base {
 	// Element properties
 	public $category = 'general'; // Use predefined element category 'general'
-	public $name = 'jet-smart-filters-date-range'; // Make sure to prefix your elements
+	public $name = 'jet-smart-filters-search'; // Make sure to prefix your elements
 	public $icon = 'ti-filter'; // Themify icon font class
-	public $css_selector = '.jet-smart-filters-date-range'; // Default CSS selector
+	public $css_selector = '.jet-smart-filters-search'; // Default CSS selector
 	public $scripts = []; // Script(s) run when element is rendered on frontend or updated in builder
 
-	public $jet_element_render = 'date-range';
+	public $jet_element_render = 'search';
 
 	// Return localised element label
 	public function get_label() {
-		return esc_html__( 'Date Range Filter', 'jet-smart-filters' );
+		return esc_html__( 'Search Filter', 'jet-smart-filters' );
 	}
 
 	// Set builder control groups
@@ -35,79 +35,32 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 			]
 		);
 
-		$this->register_jet_control_group(
-			'section_calendar_styles',
-			[
-				'title' => esc_html__( 'Calendar', 'jet-smart-filters' ),
-				'tab'   => 'style',
-			]
-		);
-
-		$this->register_jet_control_group(
-			'section_calendar_title',
-			[
-				'title' => esc_html__( 'Calendar Caption', 'jet-smart-filters' ),
-				'tab'   => 'style',
-			]
-		);
-
-		$this->register_jet_control_group(
-			'section_calendar_prev_next',
-			[
-				'title' => esc_html__( 'Calendar Navigation Arrows', 'jet-smart-filters' ),
-				'tab'   => 'style',
-			]
-		);
-
-		$this->register_jet_control_group(
-			'section_calendar_header',
-			[
-				'title' => esc_html__( 'Calendar Week Days', 'jet-smart-filters' ),
-				'tab'   => 'style',
-			]
-		);
-
-		$this->register_jet_control_group(
-			'section_calendar_content',
-			[
-				'title' => esc_html__( 'Calendar Days', 'jet-smart-filters' ),
-				'tab'   => 'style',
-			]
-		);
-
 		$this->controls_section_content( 'group' );
 
-		$this->controls_section_date_inputs( 'group' );
+		$this->controls_section_input( 'group' );
 
 		$this->base_controls_section_filter_label( 'group' );
 
 		$this->controls_section_filter_apply_button( 'group' );
-
 	}
 
 	// Set builder controls
 	public function set_controls() {
 
 		$css_scheme = apply_filters(
-			'jet-smart-filters/widgets/date-range/css-scheme',
-			[
-				'filter-wrapper'            => '.jet-smart-filters-date-range',
-				'filter-content'            => '.jet-smart-filters-date-range .jet-date-range',
+			'jet-smart-filters/widgets/search/css-scheme',
+			array(
 				'filters-label'             => '.jet-filter-label',
-				'inputs'                    => '.jet-date-range__inputs',
-				'input'                     => '.jet-date-range__inputs > input',
-				'apply-filters-button'      => '.jet-date-range__submit',
-				'apply-filters-button-icon' => '.jet-date-range__submit-icon',
-				'calendar-wrapper'          => '.ui-datepicker',
-				'calendar'                  => '.ui-datepicker-calendar',
-				'calendar-header'           => '.ui-datepicker-header',
-				'calendar-prev-button'      => '.ui-datepicker-prev',
-				'calendar-next-button'      => '.ui-datepicker-next',
-				'calendar-title'            => '.ui-datepicker-title',
-				'calendar-body-header'      => '.ui-datepicker-calendar thead',
-				'calendar-body-content'     => '.ui-datepicker-calendar tbody',
-			]
+				'filter-wrapper'            => '.jet-search-filter',
+				'input'                     => '.jet-search-filter__input',
+				'input-wrapper'             => '.jet-search-filter__input-wrapper',
+				'input-clear'               => '.jet-search-filter__input-clear',
+				'input-loading'             => '.jet-search-filter__input-loading',
+				'apply-filters-button'      => '.jet-search-filter__submit',
+				'apply-filters-button-icon' => '.jet-search-filter__submit-icon',
+			)
 		);
+
 
 		$this->start_jet_control_group( 'section_general' );
 
@@ -149,21 +102,27 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 				'label'   => esc_html__( 'Apply type', 'jet-smart-filters' ),
 				'type'    => 'select',
 				'options' => [
-					'ajax'   => esc_html__( 'AJAX', 'jet-smart-filters' ),
-					'reload' => esc_html__( 'Page reload', 'jet-smart-filters' ),
-					'mixed'  => esc_html__( 'Mixed', 'jet-smart-filters' ),
+					'ajax'          => esc_html__( 'AJAX', 'jet-smart-filters' ),
+					'ajax-ontyping' => esc_html__( 'AJAX on typing', 'jet-smart-filters' ),
+					'reload'        => esc_html__( 'Page reload', 'jet-smart-filters' ),
+					'mixed'         => esc_html__( 'Mixed', 'jet-smart-filters' ),
 				],
 				'default' => 'ajax',
 			]
 		);
 
 		$this->register_jet_control(
-			'hide_apply_button',
+			'typing_min_letters_count',
 			[
-				'tab'     => 'content',
-				'label'   => esc_html__( 'Hide apply button', 'jet-smart-filters' ),
-				'type'    => 'checkbox',
-				'default' => false,
+				'tab'         => 'content',
+				'label'       => esc_html__( 'Min number of letters', 'jet-smart-filters' ),
+				'type'        => 'number',
+				'default'     => 3,
+				'min'         => 1,
+				'max'         => 10,
+				'step'        => 1,
+				'description' => esc_html__( 'The minimum number of letters to start the search.', 'jet-smart-filters' ),
+				'required'    => [ 'apply_type', '=', 'ajax-ontyping' ],
 			]
 		);
 
@@ -171,11 +130,11 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 			'apply_button_text',
 			[
 				'tab'            => 'content',
-				'label'          => esc_html__( 'Apply button text', 'jet-smart-filters' ),
+				'label'          => esc_html__( 'Search button text', 'jet-smart-filters' ),
 				'type'           => 'text',
 				'hasDynamicData' => false,
 				'default'        => esc_html__( 'Apply filter', 'jet-smart-filters' ),
-				'required'       => [ 'hide_apply_button', '=', false ],
+				'required'       => [ 'apply_type', '=', [ 'ajax', 'reload', 'mixed' ] ],
 			]
 		);
 
@@ -183,9 +142,9 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 			'apply_button_icon',
 			[
 				'tab'      => 'content',
-				'label'    => esc_html__( 'Apply button icon', 'jet-smart-filters' ),
+				'label'    => esc_html__( 'Search button icon', 'jet-smart-filters' ),
 				'type'     => 'icon',
-				'required' => [ 'hide_apply_button', '=', false ],
+				'required' => [ 'apply_type', '=', [ 'ajax', 'reload', 'mixed' ] ],
 			]
 		);
 
@@ -215,12 +174,9 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 
 		$this->end_jet_control_group();
 
-		// Include Datepicker Style
-		include jet_smart_filters_bricks()->plugin_path( 'includes/bricks-views/elements/common-controls/datepicker-style.php' );
-
 		$this->controls_section_content( 'controls', $css_scheme );
 
-		$this->controls_section_date_inputs( 'controls', $css_scheme );
+		$this->controls_section_input( 'controls', $css_scheme );
 
 		$this->base_controls_section_filter_label( 'controls', $css_scheme );
 
@@ -231,7 +187,7 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 		switch ( $name ) {
 			case 'group':
 				$this->register_jet_control_group(
-					'section_date_range_content_style',
+					'section_search_content_style',
 					[
 						'title' => esc_html__( $this->get_label() . ': Content', 'jet-smart-filters' ),
 						'tab'   => 'style',
@@ -240,7 +196,7 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 
 				break;
 			case 'controls':
-				$this->start_jet_control_group( 'section_date_range_content_style' );
+				$this->start_jet_control_group( 'section_search_content_style' );
 
 				$this->register_jet_control(
 					'content_position',
@@ -252,7 +208,7 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 						'css'     => [
 							[
 								'property' => 'flex-direction',
-								'selector' => $css_scheme['filter-content'],
+								'selector' => $css_scheme['filter-wrapper'],
 							],
 						],
 					]
@@ -271,7 +227,7 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 						'css'      => [
 							[
 								'property' => 'justify-content',
-								'selector' => $css_scheme['filter-content'],
+								'selector' => $css_scheme['filter-wrapper'],
 							],
 						],
 						'required' => [ 'content_position', '=', 'row' ],
@@ -292,7 +248,7 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 						'css'     => [
 							[
 								'property' => 'align-items',
-								'selector' => $css_scheme['filter-content'],
+								'selector' => $css_scheme['filter-wrapper'],
 							],
 						],
 					]
@@ -318,15 +274,15 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 						'css'     => [
 							[
 								'property' => 'max-width',
-								'selector' => $css_scheme['inputs'],
+								'selector' => $css_scheme['input-wrapper'],
 							],
 							[
 								'property' => 'flex-basis',
-								'selector' => $css_scheme['inputs'],
+								'selector' => $css_scheme['input-wrapper'],
 							],
 							[
 								'property' => 'width',
-								'selector' => $css_scheme['inputs'],
+								'selector' => $css_scheme['input-wrapper'],
 								'value'    => '100%',
 							],
 						],
@@ -349,7 +305,7 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 						'css'     => [
 							[
 								'property' => 'gap',
-								'selector' => $css_scheme['filter-content'],
+								'selector' => $css_scheme['filter-wrapper'],
 							],
 						],
 					]
@@ -361,11 +317,11 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 		}
 	}
 
-	public function controls_section_date_inputs( $name, $css_scheme = null ) {
+	public function controls_section_input( $name, $css_scheme = null ) {
 		switch ( $name ) {
 			case 'group':
 				$this->register_jet_control_group(
-					'section_date_range_input_style',
+					'section_search_input_style',
 					[
 						'title' => esc_html__( $this->get_label() . ': Input', 'jet-smart-filters' ),
 						'tab'   => 'style',
@@ -375,57 +331,10 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 				break;
 
 			case 'controls':
-				$this->start_jet_control_group( 'section_date_range_input_style' );
+				$this->start_jet_control_group( 'section_search_input_style' );
 
 				$this->register_jet_control(
-					'date_range_input_width',
-					[
-						'tab'     => 'style',
-						'label'   => esc_html__( 'Width', 'jet-engine' ),
-						'type'    => 'slider',
-						'units'   => [
-							'%'  => [
-								'min' => 0,
-								'max' => 50,
-							],
-						],
-						'css'     => [
-							[
-								'property' => 'max-width',
-								'selector' => $css_scheme['input'],
-							],
-							[
-								'property' => 'flex-basis',
-								'selector' => $css_scheme['input'],
-							],
-						],
-					]
-				);
-
-				$this->register_jet_control(
-					'date_range_input_gap',
-					[
-						'tab'     => 'style',
-						'label'   => esc_html__( 'Gap', 'jet-engine' ),
-						'type'    => 'slider',
-						'units'   => [
-							'px' => [
-								'min' => 0,
-								'max' => 100,
-							],
-						],
-						'default' => '20px',
-						'css'     => [
-							[
-								'property' => 'gap',
-								'selector' => $css_scheme['inputs'],
-							],
-						],
-					]
-				);
-
-				$this->register_jet_control(
-					'date_range_input_typography',
+					'search_input_typography',
 					[
 						'tab'   => 'style',
 						'label' => esc_html__( 'Typography', 'jet-smart-filters' ),
@@ -440,7 +349,22 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 				);
 
 				$this->register_jet_control(
-					'date_range_input_bg',
+					'search_input_placeholder_color',
+					[
+						'tab'   => 'style',
+						'label' => esc_html__( 'Placeholder color', 'jet-smart-filters' ),
+						'type'  => 'color',
+						'css'   => [
+							[
+								'property' => 'color',
+								'selector' => $css_scheme['input'] . '::placeholder',
+							],
+						],
+					]
+				);
+
+				$this->register_jet_control(
+					'search_input_bg',
 					[
 						'tab'   => 'style',
 						'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
@@ -455,7 +379,7 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 				);
 
 				$this->register_jet_control(
-					'date_range_input_padding',
+					'search_input_padding',
 					[
 						'tab'   => 'style',
 						'label' => esc_html__( 'Padding', 'jet-smart-filters' ),
@@ -470,7 +394,7 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 				);
 
 				$this->register_jet_control(
-					'date_range_input_border',
+					'search_input_border',
 					[
 						'tab'   => 'style',
 						'label' => esc_html__( 'Border', 'jet-smart-filters' ),
@@ -485,7 +409,7 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 				);
 
 				$this->register_jet_control(
-					'date_range_input_box_shadow',
+					'search_input_box_shadow',
 					[
 						'tab'   => 'style',
 						'label' => esc_html__( 'Box shadow', 'jet-smart-filters' ),
@@ -724,8 +648,8 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 
 		printf( '<div class="%1$s jet-filter">', $base_class );
 
-		if ( 'ajax' === $settings['apply_type'] ) {
-			$apply_type = 'ajax-reload';
+		if ( in_array( $settings['apply_type'], ['ajax', 'mixed'] ) ) {
+			$apply_type = $settings['apply_type'] . '-reload';
 		} else {
 			$apply_type = $settings['apply_type'];
 		}
@@ -739,19 +663,16 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 
 		if ( ! empty( $settings['apply_button_icon'] ) ) {
 			$rendered_icon = Element::render_icon( $settings['apply_button_icon'] );
-			$format        = '<span class="jet-date-range__submit-icon">%s</span>';
+			$format        = '<span class="jet-search-filter__submit-icon">%s</span>';
 			$icon          = sprintf( $format, $rendered_icon );
 		}
-
-		$hide_button = ! empty( $settings['hide_apply_button'] ) ? $settings['hide_apply_button'] : false;
-		$hide_button = filter_var( $hide_button, FILTER_VALIDATE_BOOLEAN );
 
 		$filter_template_args = [
 			'filter_id'            => $settings['filter_id'],
 			'content_provider'     => $provider,
 			'additional_providers' => $additional_providers,
 			'apply_type'           => $apply_type,
-			'hide_button'          => $hide_button,
+			'min_letters_count'    => $settings['typing_min_letters_count'],
 			'button_text'          => $settings['apply_button_text'],
 			'button_icon'          => $icon,
 			'query_id'             => $query_id,
@@ -768,5 +689,4 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 		echo "</div>";
 
 	}
-
 }
