@@ -205,7 +205,7 @@ class Jet_Smart_Filters_Bricks_Color_Image extends Jet_Smart_Filters_Bricks_Base
 					'item_bg',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Background', 'jet-smart-filters' ),
+						'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
@@ -266,7 +266,7 @@ class Jet_Smart_Filters_Bricks_Color_Image extends Jet_Smart_Filters_Bricks_Base
 					[
 						'tab'   => 'style',
 						'type'  => 'separator',
-						'label' => esc_html__( 'Checked State', 'jet-engine' ),
+						'label' => esc_html__( 'Checked State', 'jet-smart-filters' ),
 					]
 				);
 
@@ -274,7 +274,7 @@ class Jet_Smart_Filters_Bricks_Color_Image extends Jet_Smart_Filters_Bricks_Base
 					'item_checked_color',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Color', 'jet-engine' ),
+						'label' => esc_html__( 'Color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
@@ -289,7 +289,7 @@ class Jet_Smart_Filters_Bricks_Color_Image extends Jet_Smart_Filters_Bricks_Base
 					'item_checked_bg_color',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Background Color', 'jet-engine' ),
+						'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
@@ -304,7 +304,7 @@ class Jet_Smart_Filters_Bricks_Color_Image extends Jet_Smart_Filters_Bricks_Base
 					'item_checked_border_color',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Border Color', 'jet-engine' ),
+						'label' => esc_html__( 'Border color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
@@ -388,7 +388,7 @@ class Jet_Smart_Filters_Bricks_Color_Image extends Jet_Smart_Filters_Bricks_Base
 					[
 						'tab'   => 'style',
 						'type'  => 'separator',
-						'label' => esc_html__( 'Checked State', 'jet-engine' ),
+						'label' => esc_html__( 'Checked State', 'jet-smart-filters' ),
 						'required' => [ 'color_image_border', '!=', '' ],
 					]
 				);
@@ -397,7 +397,7 @@ class Jet_Smart_Filters_Bricks_Color_Image extends Jet_Smart_Filters_Bricks_Base
 					'color_image_checked_border_color',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Border Color', 'jet-engine' ),
+						'label' => esc_html__( 'Border color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[

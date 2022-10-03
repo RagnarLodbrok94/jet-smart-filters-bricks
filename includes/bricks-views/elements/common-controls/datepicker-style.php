@@ -492,7 +492,7 @@ $this->register_jet_control(
 	'calendar_content_cells_content_current_bg',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Background Color', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[
@@ -507,7 +507,7 @@ $this->register_jet_control(
 	'calendar_content_cells_content_current_border_color',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Border Color', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Border color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[
@@ -546,7 +546,7 @@ $this->register_jet_control(
 	'calendar_content_cells_content_active_bg',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Background Color', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[
@@ -561,7 +561,7 @@ $this->register_jet_control(
 	'calendar_content_cells_content_active_border_color',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Border Color', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Border color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[

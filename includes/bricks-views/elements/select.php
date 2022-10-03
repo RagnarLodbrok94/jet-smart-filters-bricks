@@ -75,7 +75,7 @@ class Jet_Smart_Filters_Bricks_Select extends Jet_Smart_Filters_Bricks_Base {
 				);
 
 				$this->register_jet_control(
-					'label_alignment',
+					'content_alignment',
 					[
 						'tab'      => 'style',
 						'label'    => esc_html__( 'Alignment', 'jet-smart-filters' ),
@@ -140,10 +140,10 @@ class Jet_Smart_Filters_Bricks_Select extends Jet_Smart_Filters_Bricks_Base {
 				);
 
 				$this->register_jet_control(
-					'select_background_color',
+					'select_bg_color',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Background', 'jet-smart-filters' ),
+						'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[

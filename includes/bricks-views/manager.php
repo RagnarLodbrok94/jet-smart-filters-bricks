@@ -58,6 +58,7 @@ class Manager {
 			$this->component_path( 'elements/remove-filters.php' ),
 			$this->component_path( 'elements/select.php' ),
 			$this->component_path( 'elements/search.php' ),
+			$this->component_path( 'elements/sorting.php' ),
 		);
 
 		foreach ( $element_files as $file ) {

@@ -15,7 +15,7 @@ $repeater = new \Jet_Engine\Bricks_Views\Helpers\Repeater();
 $repeater->add_control(
 	'additional_provider',
 	[
-		'label'   => esc_html__( 'Additional Provider', 'jet-engine' ),
+		'label'   => esc_html__( 'Additional Provider', 'jet-smart-filters' ),
 		'type'    => 'select',
 		'options' => jet_smart_filters()->data->content_providers(),
 	]
@@ -24,7 +24,7 @@ $repeater->add_control(
 $repeater->add_control(
 	'additional_query_id',
 	[
-		'label' => esc_html__( 'Additional Query ID', 'jet-engine' ),
+		'label' => esc_html__( 'Additional Query ID', 'jet-smart-filters' ),
 		'type'  => 'text',
 	]
 );
@@ -33,7 +33,7 @@ $this->register_jet_control(
 	'additional_providers_list',
 	[
 		'tab'           => 'content',
-		'label'         => esc_html__( 'Additional Providers List', 'jet-engine' ),
+		'label'         => esc_html__( 'Additional Providers List', 'jet-smart-filters' ),
 		'type'          => 'repeater',
 		'titleProperty' => 'additional_provider',
 		'fields'        => $repeater->get_controls(),

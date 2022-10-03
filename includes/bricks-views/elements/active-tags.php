@@ -296,7 +296,7 @@ class Jet_Smart_Filters_Bricks_Active_Tags extends \Jet_Engine\Bricks_Views\Elem
 			'tags_bg',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Background', 'jet-smart-filters' ),
+				'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 				'type'  => 'color',
 				'css'   => [
 					[
@@ -452,7 +452,7 @@ class Jet_Smart_Filters_Bricks_Active_Tags extends \Jet_Engine\Bricks_Views\Elem
 			'tag_item_bg',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Background', 'jet-smart-filters' ),
+				'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 				'type'  => 'color',
 				'css'   => [
 					[
@@ -655,7 +655,7 @@ class Jet_Smart_Filters_Bricks_Active_Tags extends \Jet_Engine\Bricks_Views\Elem
 			'tag_item_remove_bg',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Background', 'jet-smart-filters' ),
+				'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 				'type'  => 'color',
 				'css'   => [
 					[

@@ -112,10 +112,10 @@ class Jet_Smart_Filters_Bricks_Date_Period extends Jet_Smart_Filters_Bricks_Base
 				);
 
 				$this->register_jet_control(
-					'datepicker_button_background_color',
+					'datepicker_button_bg_color',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Background', 'jet-smart-filters' ),
+						'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
@@ -175,7 +175,7 @@ class Jet_Smart_Filters_Bricks_Date_Period extends Jet_Smart_Filters_Bricks_Base
 					'datepicker_button_alignment',
 					[
 						'tab'         => 'style',
-						'label'       => esc_html__( 'Alignment', 'jet-engine' ),
+						'label'       => esc_html__( 'Alignment', 'jet-smart-filters' ),
 						'type'        => 'justify-content',
 						'exclude'     => [
 							'space-between',

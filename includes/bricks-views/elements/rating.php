@@ -58,7 +58,7 @@ class Jet_Smart_Filters_Bricks_Rating extends Jet_Smart_Filters_Bricks_Base {
 					'stars_size',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Size', 'jet-engine' ),
+						'label' => esc_html__( 'Size', 'jet-smart-filters' ),
 						'type'  => 'slider',
 						'units' => [
 							'px' => [
@@ -79,7 +79,7 @@ class Jet_Smart_Filters_Bricks_Rating extends Jet_Smart_Filters_Bricks_Base {
 					'stars_gutter',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Gutter', 'jet-engine' ),
+						'label' => esc_html__( 'Gutter', 'jet-smart-filters' ),
 						'type'  => 'slider',
 						'units' => [
 							'px' => [
@@ -130,7 +130,7 @@ class Jet_Smart_Filters_Bricks_Rating extends Jet_Smart_Filters_Bricks_Base {
 					'stars_margin',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Margin', 'jet-engine' ),
+						'label' => esc_html__( 'Margin', 'jet-smart-filters' ),
 						'type'  => 'dimensions',
 						'css'   => [
 							[

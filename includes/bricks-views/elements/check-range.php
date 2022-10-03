@@ -176,10 +176,10 @@ class Jet_Smart_Filters_Bricks_Check_Range extends Jet_Smart_Filters_Bricks_Base
 				);
 
 				$this->register_jet_control(
-					'item_normal_background_color',
+					'item_normal_bg_color',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Background', 'jet-smart-filters' ),
+						'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
@@ -194,7 +194,7 @@ class Jet_Smart_Filters_Bricks_Check_Range extends Jet_Smart_Filters_Bricks_Base
 					'item_padding',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Padding', 'jet-engine' ),
+						'label' => esc_html__( 'Padding', 'jet-smart-filters' ),
 						'type'  => 'dimensions',
 						'css'   => [
 							[
@@ -209,7 +209,7 @@ class Jet_Smart_Filters_Bricks_Check_Range extends Jet_Smart_Filters_Bricks_Base
 					'item_border',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Border', 'jet-engine' ),
+						'label' => esc_html__( 'Border', 'jet-smart-filters' ),
 						'type'  => 'border',
 						'css'   => [
 							[
@@ -224,7 +224,7 @@ class Jet_Smart_Filters_Bricks_Check_Range extends Jet_Smart_Filters_Bricks_Base
 					'item_box_shadow',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Box shadow', 'jet-engine' ),
+						'label' => esc_html__( 'Box shadow', 'jet-smart-filters' ),
 						'type'  => 'box-shadow',
 						'css'   => [
 							[
@@ -240,7 +240,7 @@ class Jet_Smart_Filters_Bricks_Check_Range extends Jet_Smart_Filters_Bricks_Base
 					[
 						'tab'   => 'style',
 						'type'  => 'separator',
-						'label' => esc_html__( 'Checked State', 'jet-engine' ),
+						'label' => esc_html__( 'Checked State', 'jet-smart-filters' ),
 					]
 				);
 
@@ -248,7 +248,7 @@ class Jet_Smart_Filters_Bricks_Check_Range extends Jet_Smart_Filters_Bricks_Base
 					'item_checked_color',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Color', 'jet-engine' ),
+						'label' => esc_html__( 'Color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
@@ -263,7 +263,7 @@ class Jet_Smart_Filters_Bricks_Check_Range extends Jet_Smart_Filters_Bricks_Base
 					'item_checked_bg_color',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Background Color', 'jet-engine' ),
+						'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
@@ -278,7 +278,7 @@ class Jet_Smart_Filters_Bricks_Check_Range extends Jet_Smart_Filters_Bricks_Base
 					'item_checked_border_color',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Border Color', 'jet-engine' ),
+						'label' => esc_html__( 'Border color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
@@ -388,7 +388,7 @@ class Jet_Smart_Filters_Bricks_Check_Range extends Jet_Smart_Filters_Bricks_Base
 					'checkbox_color',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Icon Color', 'jet-engine' ),
+						'label' => esc_html__( 'Icon Color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
@@ -403,7 +403,7 @@ class Jet_Smart_Filters_Bricks_Check_Range extends Jet_Smart_Filters_Bricks_Base
 					'checkbox_bg_color',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Background Color', 'jet-engine' ),
+						'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
@@ -418,7 +418,7 @@ class Jet_Smart_Filters_Bricks_Check_Range extends Jet_Smart_Filters_Bricks_Base
 					'checkbox_border',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Border', 'jet-engine' ),
+						'label' => esc_html__( 'Border', 'jet-smart-filters' ),
 						'type'  => 'border',
 						'css'   => [
 							[
@@ -434,7 +434,7 @@ class Jet_Smart_Filters_Bricks_Check_Range extends Jet_Smart_Filters_Bricks_Base
 					[
 						'tab'   => 'style',
 						'type'  => 'separator',
-						'label' => esc_html__( 'Checked State', 'jet-engine' ),
+						'label' => esc_html__( 'Checked State', 'jet-smart-filters' ),
 					]
 				);
 
@@ -442,7 +442,7 @@ class Jet_Smart_Filters_Bricks_Check_Range extends Jet_Smart_Filters_Bricks_Base
 					'checkbox_checked_bg_color',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Background Color', 'jet-engine' ),
+						'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
@@ -457,7 +457,7 @@ class Jet_Smart_Filters_Bricks_Check_Range extends Jet_Smart_Filters_Bricks_Base
 					'checkbox_checked_border_color',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Border Color', 'jet-engine' ),
+						'label' => esc_html__( 'Border color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[

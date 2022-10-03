@@ -211,10 +211,10 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 		$this->start_jet_control_group( 'pagination_style' );
 
 		$this->register_jet_control(
-			'pagination_background_color',
+			'pagination_bg_color',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Background', 'jet-engine' ),
+				'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 				'type'  => 'color',
 				'css'   => [
 					[
@@ -228,7 +228,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_margin',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Margin', 'jet-engine' ),
+				'label' => esc_html__( 'Margin', 'jet-smart-filters' ),
 				'type'  => 'dimensions',
 				'default' => '0',
 				'css'   => [
@@ -243,7 +243,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_padding',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Padding', 'jet-engine' ),
+				'label' => esc_html__( 'Padding', 'jet-smart-filters' ),
 				'type'  => 'dimensions',
 				'css'   => [
 					[
@@ -257,7 +257,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_border',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Border', 'jet-engine' ),
+				'label' => esc_html__( 'Border', 'jet-smart-filters' ),
 				'type'  => 'border',
 				'css'   => [
 					[
@@ -271,7 +271,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_shadow',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Box shadow', 'jet-engine' ),
+				'label' => esc_html__( 'Box shadow', 'jet-smart-filters' ),
 				'type'  => 'box-shadow',
 				'css'   => [
 					[
@@ -289,7 +289,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_items_typography',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Typography', 'jet-engine' ),
+				'label' => esc_html__( 'Typography', 'jet-smart-filters' ),
 				'type'  => 'typography',
 				'css'   => [
 					[
@@ -304,7 +304,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_items_bg_color',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Background', 'jet-engine' ),
+				'label' => esc_html__( 'Background', 'jet-smart-filters' ),
 				'type'  => 'color',
 				'css'   => [
 					[
@@ -319,7 +319,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_items_width',
 			[
 				'tab'      => 'style',
-				'label'    => esc_html__( 'Item Width', 'jet-engine' ),
+				'label'    => esc_html__( 'Item Width', 'jet-smart-filters' ),
 				'type'     => 'slider',
 				'units'    => [
 					'px' => [
@@ -340,7 +340,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_items_gap',
 			[
 				'tab'      => 'style',
-				'label'    => esc_html__( 'Gap Between Items', 'jet-engine' ),
+				'label'    => esc_html__( 'Gap Between Items', 'jet-smart-filters' ),
 				'type'     => 'slider',
 				'units'    => [
 					'px' => [
@@ -384,7 +384,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_items_alignment',
 			[
 				'tab'         => 'style',
-				'label'       => esc_html__( 'Alignment', 'jet-engine' ),
+				'label'       => esc_html__( 'Alignment', 'jet-smart-filters' ),
 				'type'        => 'justify-content',
 				'css'         => [
 					[
@@ -402,7 +402,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_items_padding',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Padding', 'jet-engine' ),
+				'label' => esc_html__( 'Padding', 'jet-smart-filters' ),
 				'type'  => 'dimensions',
 				'css'   => [
 					[
@@ -417,7 +417,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_items_border',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Border', 'jet-engine' ),
+				'label' => esc_html__( 'Border', 'jet-smart-filters' ),
 				'type'  => 'border',
 				'css'   => [
 					[
@@ -433,7 +433,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			[
 				'tab'   => 'style',
 				'type'  => 'separator',
-				'label' => esc_html__( 'Current Item', 'jet-engine' ),
+				'label' => esc_html__( 'Current Item', 'jet-smart-filters' ),
 			]
 		);
 
@@ -441,7 +441,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_item_color_current',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Color', 'jet-engine' ),
+				'label' => esc_html__( 'Color', 'jet-smart-filters' ),
 				'type'  => 'color',
 				'css'   => [
 					[
@@ -456,7 +456,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_item_bg_color_current',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Background', 'jet-engine' ),
+				'label' => esc_html__( 'Background', 'jet-smart-filters' ),
 				'type'  => 'color',
 				'css'   => [
 					[
@@ -471,7 +471,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_item_border_color_current',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Border Color', 'jet-engine' ),
+				'label' => esc_html__( 'Border color', 'jet-smart-filters' ),
 				'type'  => 'color',
 				'css'   => [
 					[
@@ -487,7 +487,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			[
 				'tab'   => 'style',
 				'type'  => 'separator',
-				'label' => esc_html__( 'Dots Item', 'jet-engine' ),
+				'label' => esc_html__( 'Dots Item', 'jet-smart-filters' ),
 			]
 		);
 
@@ -495,7 +495,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_item_color_dots',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Color', 'jet-engine' ),
+				'label' => esc_html__( 'Color', 'jet-smart-filters' ),
 				'type'  => 'color',
 				'css'   => [
 					[
@@ -510,7 +510,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_item_bg_color_dots',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Background', 'jet-engine' ),
+				'label' => esc_html__( 'Background', 'jet-smart-filters' ),
 				'type'  => 'color',
 				'css'   => [
 					[
@@ -525,7 +525,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_item_border_color_dots',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Border Color', 'jet-engine' ),
+				'label' => esc_html__( 'Border color', 'jet-smart-filters' ),
 				'type'  => 'color',
 				'css'   => [
 					[

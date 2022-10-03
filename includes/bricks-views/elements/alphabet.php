@@ -143,7 +143,7 @@ class Jet_Smart_Filters_Bricks_Alphabet extends Jet_Smart_Filters_Bricks_Base {
 					'item_bg',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Background', 'jet-smart-filters' ),
+						'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
@@ -204,7 +204,7 @@ class Jet_Smart_Filters_Bricks_Alphabet extends Jet_Smart_Filters_Bricks_Base {
 					[
 						'tab'   => 'style',
 						'type'  => 'separator',
-						'label' => esc_html__( 'Checked State', 'jet-engine' ),
+						'label' => esc_html__( 'Checked State', 'jet-smart-filters' ),
 					]
 				);
 

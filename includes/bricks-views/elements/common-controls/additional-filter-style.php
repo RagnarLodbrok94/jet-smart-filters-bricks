@@ -74,7 +74,7 @@ $this->register_jet_control(
 	'search_items_bg',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Background Color', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[
@@ -283,7 +283,7 @@ $this->register_jet_control(
 	'more_less_button_bg',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Background Color', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[
@@ -418,7 +418,7 @@ $this->register_jet_control(
 	'dropdown_bg',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Background Color', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[
@@ -529,7 +529,7 @@ $this->register_jet_control(
 	'dropdown_active_item_bg',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Background Color', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[
@@ -619,7 +619,7 @@ $this->register_jet_control(
 	'dropdown_body_bg',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Background Color', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[

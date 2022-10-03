@@ -460,7 +460,7 @@ $this->register_jet_control(
 	[
 		'tab'   => 'style',
 		'type'  => 'separator',
-		'label' => esc_html__( 'Hover State', 'jet-engine' ),
+		'label' => esc_html__( 'Hover State', 'jet-smart-filters' ),
 	]
 );
 
@@ -531,7 +531,7 @@ $this->register_jet_control(
 	[
 		'tab'   => 'style',
 		'type'  => 'separator',
-		'label' => esc_html__( 'Active State', 'jet-engine' ),
+		'label' => esc_html__( 'Active State', 'jet-smart-filters' ),
 	]
 );
 
@@ -608,7 +608,7 @@ $this->register_jet_control(
 	[
 		'tab'   => 'style',
 		'type'  => 'separator',
-		'label' => esc_html__( 'Current State', 'jet-engine' ),
+		'label' => esc_html__( 'Current State', 'jet-smart-filters' ),
 	]
 );
 

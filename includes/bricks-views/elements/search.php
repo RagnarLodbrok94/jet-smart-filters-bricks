@@ -2,9 +2,9 @@
 
 namespace Jet_Smart_Filters\Bricks_Views\Elements;
 
-// If this file is called directly, abort.
 use Bricks\Element;
 
+// If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
@@ -204,7 +204,6 @@ class Jet_Smart_Filters_Bricks_Search extends Jet_Smart_Filters_Bricks_Base {
 						'tab'     => 'style',
 						'label'   => esc_html__( 'Direction', 'jet-smart-filters' ),
 						'type'    => 'direction',
-						'default' => 'column',
 						'css'     => [
 							[
 								'property' => 'flex-direction',
@@ -218,7 +217,7 @@ class Jet_Smart_Filters_Bricks_Search extends Jet_Smart_Filters_Bricks_Base {
 					'menu_main_axis',
 					[
 						'tab'      => 'style',
-						'label'    => esc_html__( 'Align main axis', 'jet-engine' ),
+						'label'    => esc_html__( 'Align main axis', 'jet-smart-filters' ),
 						'type'     => 'justify-content',
 						'tooltip'  => [
 							'content'  => 'justify-content',
@@ -238,7 +237,7 @@ class Jet_Smart_Filters_Bricks_Search extends Jet_Smart_Filters_Bricks_Base {
 					'menu_cross_axis',
 					[
 						'tab'     => 'style',
-						'label'   => esc_html__( 'Align cross axis', 'jet-engine' ),
+						'label'   => esc_html__( 'Align cross axis', 'jet-smart-filters' ),
 						'type'    => 'align-items',
 						'tooltip' => [
 							'content'  => 'align-items',
@@ -258,7 +257,7 @@ class Jet_Smart_Filters_Bricks_Search extends Jet_Smart_Filters_Bricks_Base {
 					'content_date_range_inputs_width',
 					[
 						'tab'     => 'style',
-						'label'   => esc_html__( 'Inputs Width', 'jet-engine' ),
+						'label'   => esc_html__( 'Inputs Width', 'jet-smart-filters' ),
 						'type'    => 'slider',
 						'units'   => [
 							'px' => [
@@ -293,7 +292,7 @@ class Jet_Smart_Filters_Bricks_Search extends Jet_Smart_Filters_Bricks_Base {
 					'content_date_range_gap',
 					[
 						'tab'     => 'style',
-						'label'   => esc_html__( 'Gap', 'jet-engine' ),
+						'label'   => esc_html__( 'Gap', 'jet-smart-filters' ),
 						'type'    => 'slider',
 						'units'   => [
 							'px' => [
@@ -556,7 +555,7 @@ class Jet_Smart_Filters_Bricks_Search extends Jet_Smart_Filters_Bricks_Base {
 					'filter_apply_button_icon_direction',
 					[
 						'tab'       => 'style',
-						'label'     => esc_html__( 'Direction', 'jet-engine' ),
+						'label'     => esc_html__( 'Direction', 'jet-smart-filters' ),
 						'type'      => 'direction',
 						'direction' => 'row',
 						'css'       => [
@@ -572,7 +571,7 @@ class Jet_Smart_Filters_Bricks_Search extends Jet_Smart_Filters_Bricks_Base {
 					'filter_apply_button_icon_color',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Icon Color', 'jet-engine' ),
+						'label' => esc_html__( 'Icon Color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
@@ -591,7 +590,7 @@ class Jet_Smart_Filters_Bricks_Search extends Jet_Smart_Filters_Bricks_Base {
 					'filter_apply_button_icon_size',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Icon Size', 'jet-engine' ),
+						'label' => esc_html__( 'Icon Size', 'jet-smart-filters' ),
 						'type'  => 'number',
 						'units' => true,
 						'css'   => [
@@ -607,7 +606,7 @@ class Jet_Smart_Filters_Bricks_Search extends Jet_Smart_Filters_Bricks_Base {
 					'filter_apply_button_icon_gap',
 					[
 						'tab'     => 'style',
-						'label'   => esc_html__( 'Icon Gap', 'jet-engine' ),
+						'label'   => esc_html__( 'Icon Gap', 'jet-smart-filters' ),
 						'type'    => 'slider',
 						'units'   => [
 							'px' => [

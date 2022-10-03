@@ -196,7 +196,7 @@ class Jet_Smart_Filters_Bricks_Range extends Jet_Smart_Filters_Bricks_Base {
 					'range_points_bg',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Background Color', 'jet-smart-filters' ),
+						'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
@@ -437,7 +437,7 @@ class Jet_Smart_Filters_Bricks_Range extends Jet_Smart_Filters_Bricks_Base {
 					'input_bg',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Background Color', 'jet-smart-filters' ),
+						'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
@@ -521,7 +521,7 @@ class Jet_Smart_Filters_Bricks_Range extends Jet_Smart_Filters_Bricks_Base {
 					'input_text_bg',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Background Color', 'jet-smart-filters' ),
+						'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
