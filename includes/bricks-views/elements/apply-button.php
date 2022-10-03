@@ -145,7 +145,7 @@ class Jet_Smart_Filters_Bricks_Apply_Button extends \Jet_Engine\Bricks_Views\Ele
 			'filter_apply_button_typography',
 			[
 				'tab'     => 'style',
-				'label'   => esc_html__( 'Typography', 'jet-engine' ),
+				'label'   => esc_html__( 'Typography', 'jet-smart-filters' ),
 				'type'    => 'typography',
 				'exclude' => [
 					'text-align',
@@ -163,7 +163,7 @@ class Jet_Smart_Filters_Bricks_Apply_Button extends \Jet_Engine\Bricks_Views\Ele
 			'filter_apply_button_bg',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Background color', 'jet-engine' ),
+				'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 				'type'  => 'color',
 				'css'   => [
 					[
@@ -178,7 +178,7 @@ class Jet_Smart_Filters_Bricks_Apply_Button extends \Jet_Engine\Bricks_Views\Ele
 			'filter_apply_button_margin',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Margin', 'jet-engine' ),
+				'label' => esc_html__( 'Margin', 'jet-smart-filters' ),
 				'type'  => 'dimensions',
 				'css'   => [
 					[
@@ -193,7 +193,7 @@ class Jet_Smart_Filters_Bricks_Apply_Button extends \Jet_Engine\Bricks_Views\Ele
 			'filter_apply_button_padding',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Padding', 'jet-engine' ),
+				'label' => esc_html__( 'Padding', 'jet-smart-filters' ),
 				'type'  => 'dimensions',
 				'css'   => [
 					[
@@ -208,7 +208,7 @@ class Jet_Smart_Filters_Bricks_Apply_Button extends \Jet_Engine\Bricks_Views\Ele
 			'filter_apply_button_border',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Border', 'jet-engine' ),
+				'label' => esc_html__( 'Border', 'jet-smart-filters' ),
 				'type'  => 'border',
 				'css'   => [
 					[
@@ -223,7 +223,7 @@ class Jet_Smart_Filters_Bricks_Apply_Button extends \Jet_Engine\Bricks_Views\Ele
 			'filter_apply_button_box_shadow',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Box shadow', 'jet-engine' ),
+				'label' => esc_html__( 'Box shadow', 'jet-smart-filters' ),
 				'type'  => 'box-shadow',
 				'css'   => [
 					[
