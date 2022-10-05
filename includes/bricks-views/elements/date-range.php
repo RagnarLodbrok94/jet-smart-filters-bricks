@@ -13,7 +13,7 @@ class Jet_Smart_Filters_Bricks_Date_Range extends Jet_Smart_Filters_Bricks_Base 
 	// Element properties
 	public $category = 'jetsmartfilters'; // Use predefined element category 'general'
 	public $name = 'jet-smart-filters-date-range'; // Make sure to prefix your elements
-	public $icon = 'ti-filter'; // Themify icon font class
+	public $icon = 'jet-smart-filters-icon-date-range-filter'; // Themify icon font class
 	public $css_selector = '.jet-smart-filters-date-range'; // Default CSS selector
 	public $scripts = []; // Script(s) run when element is rendered on frontend or updated in builder
 

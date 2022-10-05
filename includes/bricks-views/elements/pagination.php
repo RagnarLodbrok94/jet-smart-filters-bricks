@@ -11,7 +11,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 	// Element properties
 	public $category = 'jetsmartfilters'; // Use predefined element category 'general'
 	public $name = 'jet-smart-filters-pagination'; // Make sure to prefix your elements
-	public $icon = 'ti-angle-double-right'; // Themify icon font class
+	public $icon = 'jet-smart-filters-icon-pagination'; // Themify icon font class
 	public $css_selector = '.jet-filters-pagination'; // Default CSS selector
 	public $scripts = []; // Script(s) run when element is rendered on frontend or updated in builder
 

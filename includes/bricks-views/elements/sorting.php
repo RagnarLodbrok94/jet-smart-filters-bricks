@@ -10,7 +10,7 @@ class Jet_Smart_Filters_Bricks_Sorting extends Jet_Smart_Filters_Bricks_Base {
 	// Element properties
 	public $category = 'jetsmartfilters'; // Use predefined element category 'general'
 	public $name = 'jet-smart-filters-sorting'; // Make sure to prefix your elements
-	public $icon = 'ti-filter'; // Themify icon font class
+	public $icon = 'jet-smart-filters-icon-sorting-filter'; // Themify icon font class
 	public $css_selector = '.jet-smart-filters-sorting'; // Default CSS selector
 	public $scripts = []; // Script(s) run when element is rendered on frontend or updated in builder
 

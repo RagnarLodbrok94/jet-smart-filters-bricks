@@ -38,6 +38,19 @@ class Manager {
 			return $i18n;
 		} );
 
+		// Add JetSmartFilters icons font
+		add_action( 'wp_enqueue_scripts', function() {
+			// Enqueue your files on the canvas & frontend, not the builder panel. Otherwise custom CSS might affect builder)
+			if ( bricks_is_builder() ) {
+				wp_enqueue_style(
+					'jet-smart-filters-icons-font',
+					jet_smart_filters()->plugin_url( 'assets/css/lib/jet-smart-filters-icons/jet-smart-filters-icons.css' ),
+					array(),
+					jet_smart_filters()->get_version()
+				);
+			}
+		} );
+
 	}
 
 	public function component_path( $relative_path = '' ) {

@@ -13,7 +13,7 @@ class Jet_Smart_Filters_Bricks_Rating extends Jet_Smart_Filters_Bricks_Base {
 	// Element properties
 	public $category = 'jetsmartfilters'; // Use predefined element category 'general'
 	public $name = 'jet-smart-filters-rating'; // Make sure to prefix your elements
-	public $icon = 'ti-filter'; // Themify icon font class
+	public $icon = 'jet-smart-filters-icon-rating-filter'; // Themify icon font class
 	public $css_selector = '.jet-smart-filters-rating'; // Default CSS selector
 	public $scripts = []; // Script(s) run when element is rendered on frontend or updated in builder
 

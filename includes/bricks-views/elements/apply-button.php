@@ -11,7 +11,7 @@ class Jet_Smart_Filters_Bricks_Apply_Button extends \Jet_Engine\Bricks_Views\Ele
 	// Element properties
 	public $category = 'jetsmartfilters'; // Use predefined element category 'general'
 	public $name = 'jet-smart-filters-apply-button'; // Make sure to prefix your elements
-	public $icon = 'ti-filter'; // Themify icon font class
+	public $icon = 'jet-smart-filters-icon-apply-filter'; // Themify icon font class
 	public $css_selector = '.jet-smart-filters-apply-button'; // Default CSS selector
 	public $scripts = []; // Script(s) run when element is rendered on frontend or updated in builder
 
