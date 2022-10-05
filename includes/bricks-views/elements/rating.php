@@ -11,7 +11,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 class Jet_Smart_Filters_Bricks_Rating extends Jet_Smart_Filters_Bricks_Base {
 	// Element properties
-	public $category = 'general'; // Use predefined element category 'general'
+	public $category = 'jetsmartfilters'; // Use predefined element category 'general'
 	public $name = 'jet-smart-filters-rating'; // Make sure to prefix your elements
 	public $icon = 'ti-filter'; // Themify icon font class
 	public $css_selector = '.jet-smart-filters-rating'; // Default CSS selector
@@ -104,8 +104,7 @@ class Jet_Smart_Filters_Bricks_Rating extends Jet_Smart_Filters_Bricks_Base {
 						'type'  => 'color',
 						'css'   => [
 							[
-								'property' => 'color',
-								'selector' => '.jet-rating-star__label',
+								'property' => '--rating-color',
 							],
 						],
 					]
@@ -115,12 +114,25 @@ class Jet_Smart_Filters_Bricks_Rating extends Jet_Smart_Filters_Bricks_Base {
 					'stars_selected_color',
 					[
 						'tab'   => 'style',
-						'label' => esc_html__( 'Selected Color', 'jet-smart-filters' ),
+						'label' => esc_html__( 'Selected color', 'jet-smart-filters' ),
 						'type'  => 'color',
 						'css'   => [
 							[
-								'property' => 'color',
-								'selector' => '.jet-rating input.is-checked ~ label',
+								'property' => '--rating-selected-color',
+							],
+						],
+					]
+				);
+
+				$this->register_jet_control(
+					'stars_color_second',
+					[
+						'tab'   => 'style',
+						'label' => esc_html__( 'Selected hover color', 'jet-smart-filters' ),
+						'type'  => 'color',
+						'css'   => [
+							[
+								'property' => '--rating-hover-color',
 							],
 						],
 					]

@@ -32,6 +32,12 @@ class Manager {
 
 		add_action( 'init', array( $this, 'register_elements' ), 11 );
 
+		add_filter( 'bricks/builder/i18n', function( $i18n ) {
+			$i18n['jetsmartfilters'] = esc_html__( 'JetSmartFilters', 'jet-engine' );
+
+			return $i18n;
+		} );
+
 	}
 
 	public function component_path( $relative_path = '' ) {

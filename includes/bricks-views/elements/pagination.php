@@ -9,7 +9,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Elements\Base {
 	// Element properties
-	public $category = 'general'; // Use predefined element category 'general'
+	public $category = 'jetsmartfilters'; // Use predefined element category 'general'
 	public $name = 'jet-smart-filters-pagination'; // Make sure to prefix your elements
 	public $icon = 'ti-angle-double-right'; // Themify icon font class
 	public $css_selector = '.jet-filters-pagination'; // Default CSS selector

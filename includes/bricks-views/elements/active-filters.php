@@ -9,7 +9,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 class Jet_Smart_Filters_Bricks_Active_Filters extends \Jet_Engine\Bricks_Views\Elements\Base {
 	// Element properties
-	public $category = 'general'; // Use predefined element category 'general'
+	public $category = 'jetsmartfilters'; // Use predefined element category 'general'
 	public $name = 'jet-smart-filters-active'; // Make sure to prefix your elements
 	public $icon = 'ti-filter'; // Themify icon font class
 	public $css_selector = '.jet-smart-filters-active'; // Default CSS selector
