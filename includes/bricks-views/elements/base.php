@@ -2,6 +2,8 @@
 
 namespace Jet_Smart_Filters\Bricks_Views\Elements;
 
+use Jet_Engine\Bricks_Views\Helpers\Options_Converter;
+
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
@@ -46,19 +48,21 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 			[
 				'label'       => esc_html__( 'Select filter', 'jet-smart-filters' ),
 				'type'        => 'select',
-				'placeholder' => esc_html__( 'Select...', 'jet-smart-filters' ),
-				'multiple'    => $this->filter_id_multiple,
 				'options'     => jet_smart_filters()->data->get_filters_by_type( $this->jet_element_render ),
+				'multiple'    => $this->filter_id_multiple,
+				'searchable'  => true,
+				'placeholder' => esc_html__( 'Select...', 'jet-smart-filters' ),
 			]
 		);
 
 		$this->register_jet_control(
 			'content_provider',
 			[
-				'tab'     => 'content',
-				'label'   => esc_html__( 'This filter for', 'jet-smart-filters' ),
-				'type'    => 'select',
-				'options' => jet_smart_filters()->data->content_providers(),
+				'tab'        => 'content',
+				'label'      => esc_html__( 'This filter for', 'jet-smart-filters' ),
+				'type'       => 'select',
+				'options'    => Options_Converter::remove_placeholder_from_options( jet_smart_filters()->data->content_providers() ),
+				'searchable' => true,
 			]
 		);
 
@@ -138,12 +142,12 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 			$this->register_jet_control(
 				'rating_icon',
 				[
-					'tab'      => 'content',
-					'label'    => esc_html__( 'Rating icon', 'jet-smart-filters' ),
-					'type'     => 'icon',
+					'tab'     => 'content',
+					'label'   => esc_html__( 'Rating icon', 'jet-smart-filters' ),
+					'type'    => 'icon',
 					'default' => [
 						'library' => 'fa',
-						'icon' => 'fa fa-star',
+						'icon'    => 'fa fa-star',
 					],
 				]
 			);
@@ -528,7 +532,7 @@ class Jet_Smart_Filters_Bricks_Base extends \Jet_Engine\Bricks_Views\Elements\Ba
 								'max' => 100,
 							],
 						],
-						'default'  => '12px',
+						'default' => '12px',
 						'css'     => [
 							[
 								'property' => 'row-gap',

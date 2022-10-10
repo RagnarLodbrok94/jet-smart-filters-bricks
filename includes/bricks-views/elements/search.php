@@ -3,6 +3,7 @@
 namespace Jet_Smart_Filters\Bricks_Views\Elements;
 
 use Bricks\Element;
+use Jet_Engine\Bricks_Views\Helpers\Options_Converter;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -69,19 +70,21 @@ class Jet_Smart_Filters_Bricks_Search extends Jet_Smart_Filters_Bricks_Base {
 			[
 				'label'       => esc_html__( 'Select filter', 'jet-smart-filters' ),
 				'type'        => 'select',
-				'placeholder' => esc_html__( 'Select...', 'jet-smart-filters' ),
-				'multiple'    => false,
 				'options'     => jet_smart_filters()->data->get_filters_by_type( $this->jet_element_render ),
+				'multiple'    => false,
+				'searchable'  => true,
+				'placeholder' => esc_html__( 'Select...', 'jet-smart-filters' ),
 			]
 		);
 
 		$this->register_jet_control(
 			'content_provider',
 			[
-				'tab'     => 'content',
-				'label'   => esc_html__( 'This filter for', 'jet-smart-filters' ),
-				'type'    => 'select',
-				'options' => jet_smart_filters()->data->content_providers(),
+				'tab'        => 'content',
+				'label'      => esc_html__( 'This filter for', 'jet-smart-filters' ),
+				'type'       => 'select',
+				'options'    => Options_Converter::remove_placeholder_from_options( jet_smart_filters()->data->content_providers() ),
+				'searchable' => true,
 			]
 		);
 
@@ -201,10 +204,10 @@ class Jet_Smart_Filters_Bricks_Search extends Jet_Smart_Filters_Bricks_Base {
 				$this->register_jet_control(
 					'content_position',
 					[
-						'tab'     => 'style',
-						'label'   => esc_html__( 'Direction', 'jet-smart-filters' ),
-						'type'    => 'direction',
-						'css'     => [
+						'tab'   => 'style',
+						'label' => esc_html__( 'Direction', 'jet-smart-filters' ),
+						'type'  => 'direction',
+						'css'   => [
 							[
 								'property' => 'flex-direction',
 								'selector' => $css_scheme['filter-wrapper'],
@@ -487,13 +490,13 @@ class Jet_Smart_Filters_Bricks_Search extends Jet_Smart_Filters_Bricks_Base {
 				$this->register_jet_control(
 					'filter_apply_button_margin',
 					[
-						'tab'   => 'style',
-						'label' => esc_html__( 'Margin', 'jet-smart-filters' ),
-						'type'  => 'dimensions',
+						'tab'     => 'style',
+						'label'   => esc_html__( 'Margin', 'jet-smart-filters' ),
+						'type'    => 'dimensions',
 						'default' => [
-							'top'    => 0,
+							'top' => 0,
 						],
-						'css'   => [
+						'css'     => [
 							[
 								'property' => 'margin',
 								'selector' => $css_scheme['apply-filters-button'],
@@ -647,7 +650,7 @@ class Jet_Smart_Filters_Bricks_Search extends Jet_Smart_Filters_Bricks_Base {
 
 		printf( '<div class="%1$s jet-filter">', $base_class );
 
-		if ( in_array( $settings['apply_type'], ['ajax', 'mixed'] ) ) {
+		if ( in_array( $settings['apply_type'], [ 'ajax', 'mixed' ] ) ) {
 			$apply_type = $settings['apply_type'] . '-reload';
 		} else {
 			$apply_type = $settings['apply_type'];

@@ -1,5 +1,7 @@
 <?php
 
+use Jet_Engine\Bricks_Views\Helpers\Options_Converter;
+
 $this->register_jet_control(
 	'additional_providers_enabled',
 	[
@@ -15,9 +17,10 @@ $repeater = new \Jet_Engine\Bricks_Views\Helpers\Repeater();
 $repeater->add_control(
 	'additional_provider',
 	[
-		'label'   => esc_html__( 'Additional Provider', 'jet-smart-filters' ),
-		'type'    => 'select',
-		'options' => jet_smart_filters()->data->content_providers(),
+		'label'      => esc_html__( 'Additional Provider', 'jet-smart-filters' ),
+		'type'       => 'select',
+		'options'    => Options_Converter::remove_placeholder_from_options( jet_smart_filters()->data->content_providers() ),
+		'searchable' => true,
 	]
 );
 

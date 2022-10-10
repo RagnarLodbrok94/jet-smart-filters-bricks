@@ -2,6 +2,8 @@
 
 namespace Jet_Smart_Filters\Bricks_Views\Elements;
 
+use Jet_Engine\Bricks_Views\Helpers\Options_Converter;
+
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
@@ -48,7 +50,7 @@ class Jet_Smart_Filters_Bricks_Remove_Filters extends \Jet_Engine\Bricks_Views\E
 		$css_scheme = apply_filters(
 			'jet-smart-filters/widgets/remove-filters/css-scheme',
 			array(
-				'filter'               => '.jet-filter',
+				'filter'                => '.jet-filter',
 				'remove-filters'        => '.jet-remove-all-filters',
 				'remove-filters-button' => '.jet-remove-all-filters__button',
 			)
@@ -59,10 +61,11 @@ class Jet_Smart_Filters_Bricks_Remove_Filters extends \Jet_Engine\Bricks_Views\E
 		$this->register_jet_control(
 			'content_provider',
 			[
-				'tab'     => 'content',
-				'label'   => esc_html__( 'This filter for', 'jet-smart-filters' ),
-				'type'    => 'select',
-				'options' => jet_smart_filters()->data->content_providers(),
+				'tab'        => 'content',
+				'label'      => esc_html__( 'This filter for', 'jet-smart-filters' ),
+				'type'       => 'select',
+				'options'    => Options_Converter::remove_placeholder_from_options( jet_smart_filters()->data->content_providers() ),
+				'searchable' => true,
 			]
 		);
 

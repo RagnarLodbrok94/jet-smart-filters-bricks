@@ -2,6 +2,8 @@
 
 namespace Jet_Smart_Filters\Bricks_Views\Elements;
 
+use Jet_Engine\Bricks_Views\Helpers\Options_Converter;
+
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
@@ -50,10 +52,11 @@ class Jet_Smart_Filters_Bricks_Apply_Button extends \Jet_Engine\Bricks_Views\Ele
 		$this->register_jet_control(
 			'content_provider',
 			[
-				'tab'     => 'content',
-				'label'   => esc_html__( 'This filter for', 'jet-smart-filters' ),
-				'type'    => 'select',
-				'options' => jet_smart_filters()->data->content_providers(),
+				'tab'        => 'content',
+				'label'      => esc_html__( 'This filter for', 'jet-smart-filters' ),
+				'type'       => 'select',
+				'options'    => Options_Converter::remove_placeholder_from_options( jet_smart_filters()->data->content_providers() ),
+				'searchable' => true,
 			]
 		);
 
@@ -85,10 +88,10 @@ class Jet_Smart_Filters_Bricks_Apply_Button extends \Jet_Engine\Bricks_Views\Ele
 		$this->register_jet_control(
 			'apply_redirect',
 			[
-				'tab'            => 'content',
-				'label'          => esc_html__( 'Apply Redirect', 'jet-smart-filters' ),
-				'type'           => 'checkbox',
-				'default'        => false,
+				'tab'     => 'content',
+				'label'   => esc_html__( 'Apply Redirect', 'jet-smart-filters' ),
+				'type'    => 'checkbox',
+				'default' => false,
 			]
 		);
 
@@ -99,17 +102,17 @@ class Jet_Smart_Filters_Bricks_Apply_Button extends \Jet_Engine\Bricks_Views\Ele
 				'label'          => esc_html__( 'Redirect Path', 'jet-smart-filters' ),
 				'type'           => 'text',
 				'hasDynamicData' => false,
-				'required' => [ 'apply_redirect', '=', true ],
+				'required'       => [ 'apply_redirect', '=', true ],
 			]
 		);
 
 		$this->register_jet_control(
 			'redirect_in_new_window',
 			[
-				'tab'            => 'content',
-				'label'          => esc_html__( 'Open in new window', 'jet-smart-filters' ),
-				'type'           => 'checkbox',
-				'default'        => false,
+				'tab'      => 'content',
+				'label'    => esc_html__( 'Open in new window', 'jet-smart-filters' ),
+				'type'     => 'checkbox',
+				'default'  => false,
 				'required' => [ 'apply_redirect', '=', true ],
 			]
 		);
@@ -296,9 +299,9 @@ class Jet_Smart_Filters_Bricks_Apply_Button extends \Jet_Engine\Bricks_Views\Ele
 
 		jet_smart_filters()->set_filters_used();
 
-		$base_class           = $this->name;
-		$settings             = $this->parse_jet_render_attributes( $this->get_jet_settings() );
-		$data_atts            = $this->container_data_atts();
+		$base_class = $this->name;
+		$settings   = $this->parse_jet_render_attributes( $this->get_jet_settings() );
+		$data_atts  = $this->container_data_atts();
 
 		echo "<div {$this->render_attributes( '_root' )}>";
 

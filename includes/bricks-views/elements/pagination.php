@@ -2,6 +2,8 @@
 
 namespace Jet_Smart_Filters\Bricks_Views\Elements;
 
+use Jet_Engine\Bricks_Views\Helpers\Options_Converter;
+
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
@@ -80,10 +82,11 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 		$this->register_jet_control(
 			'content_provider',
 			[
-				'tab'     => 'content',
-				'label'   => esc_html__( 'Pagination for:', 'jet-smart-filters' ),
-				'type'    => 'select',
-				'options' => jet_smart_filters()->data->content_providers(),
+				'tab'        => 'content',
+				'label'      => esc_html__( 'Pagination for:', 'jet-smart-filters' ),
+				'type'       => 'select',
+				'options'    => Options_Converter::remove_placeholder_from_options( jet_smart_filters()->data->content_providers() ),
+				'searchable' => true,
 			]
 		);
 
@@ -227,11 +230,11 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 		$this->register_jet_control(
 			'pagination_margin',
 			[
-				'tab'   => 'style',
-				'label' => esc_html__( 'Margin', 'jet-smart-filters' ),
-				'type'  => 'dimensions',
+				'tab'     => 'style',
+				'label'   => esc_html__( 'Margin', 'jet-smart-filters' ),
+				'type'    => 'dimensions',
 				'default' => '0',
-				'css'   => [
+				'css'     => [
 					[
 						'property' => 'margin',
 					],
@@ -318,16 +321,16 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 		$this->register_jet_control(
 			'pagination_items_width',
 			[
-				'tab'      => 'style',
-				'label'    => esc_html__( 'Item Width', 'jet-smart-filters' ),
-				'type'     => 'slider',
-				'units'    => [
+				'tab'   => 'style',
+				'label' => esc_html__( 'Item Width', 'jet-smart-filters' ),
+				'type'  => 'slider',
+				'units' => [
 					'px' => [
-						'min'  => 0,
-						'max'  => 200,
+						'min' => 0,
+						'max' => 200,
 					],
 				],
-				'css'      => [
+				'css'   => [
 					[
 						'property' => 'min-width',
 						'selector' => $css_scheme['pagination-item'],
@@ -339,17 +342,17 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 		$this->register_jet_control(
 			'pagination_items_gap',
 			[
-				'tab'      => 'style',
-				'label'    => esc_html__( 'Gap Between Items', 'jet-smart-filters' ),
-				'type'     => 'slider',
-				'units'    => [
+				'tab'     => 'style',
+				'label'   => esc_html__( 'Gap Between Items', 'jet-smart-filters' ),
+				'type'    => 'slider',
+				'units'   => [
 					'px' => [
-						'min'  => 0,
-						'max'  => 100,
+						'min' => 0,
+						'max' => 100,
 					],
 				],
-				'default'  => 10,
-				'css'      => [
+				'default' => 10,
+				'css'     => [
 					[
 						'property' => 'gap',
 					],
@@ -360,10 +363,10 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 		$this->register_jet_control(
 			'pagination_items_alignment',
 			[
-				'tab'         => 'style',
-				'label'       => esc_html__( 'Alignment', 'jet-smart-filters' ),
-				'type'        => 'justify-content',
-				'css'         => [
+				'tab'   => 'style',
+				'label' => esc_html__( 'Alignment', 'jet-smart-filters' ),
+				'type'  => 'justify-content',
+				'css'   => [
 					[
 						'property' => 'justify-content',
 					],

@@ -2,6 +2,8 @@
 
 namespace Jet_Smart_Filters\Bricks_Views\Elements;
 
+use Jet_Engine\Bricks_Views\Helpers\Options_Converter;
+
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
@@ -60,10 +62,11 @@ class Jet_Smart_Filters_Bricks_Sorting extends Jet_Smart_Filters_Bricks_Base {
 		$this->register_jet_control(
 			'content_provider',
 			[
-				'tab'     => 'content',
-				'label'   => esc_html__( 'This filter for', 'jet-smart-filters' ),
-				'type'    => 'select',
-				'options' => jet_smart_filters()->data->content_providers(),
+				'tab'        => 'content',
+				'label'      => esc_html__( 'This filter for', 'jet-smart-filters' ),
+				'type'       => 'select',
+				'options'    => Options_Converter::remove_placeholder_from_options( jet_smart_filters()->data->content_providers() ),
+				'searchable' => true,
 			]
 		);
 
@@ -193,8 +196,8 @@ class Jet_Smart_Filters_Bricks_Sorting extends Jet_Smart_Filters_Bricks_Base {
 				$this->register_jet_control_group(
 					'section_content_style',
 					[
-						'title' => esc_html__( $this->get_label() . ': Content', 'jet-smart-filters' ),
-						'tab'   => 'style',
+						'title'    => esc_html__( $this->get_label() . ': Content', 'jet-smart-filters' ),
+						'tab'      => 'style',
 						'required' => [ 'label_block', '=', false ],
 					]
 				);
@@ -202,8 +205,8 @@ class Jet_Smart_Filters_Bricks_Sorting extends Jet_Smart_Filters_Bricks_Base {
 				$this->register_jet_control_group(
 					'section_select_style',
 					[
-						'title'    => esc_html__( $this->get_label() . ': Select', 'jet-smart-filters' ),
-						'tab'      => 'style',
+						'title' => esc_html__( $this->get_label() . ': Select', 'jet-smart-filters' ),
+						'tab'   => 'style',
 					]
 				);
 				break;

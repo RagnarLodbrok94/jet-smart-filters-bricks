@@ -2,6 +2,8 @@
 
 namespace Jet_Smart_Filters\Bricks_Views\Elements;
 
+use Jet_Engine\Bricks_Views\Helpers\Options_Converter;
+
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
@@ -66,10 +68,11 @@ class Jet_Smart_Filters_Bricks_Active_Filters extends \Jet_Engine\Bricks_Views\E
 		$this->register_jet_control(
 			'content_provider',
 			[
-				'tab'     => 'content',
-				'label'   => esc_html__( 'Show active filters for:', 'jet-smart-filters' ),
-				'type'    => 'select',
-				'options' => jet_smart_filters()->data->content_providers(),
+				'tab'        => 'content',
+				'label'      => esc_html__( 'Show active filters for:', 'jet-smart-filters' ),
+				'type'       => 'select',
+				'options'    => Options_Converter::remove_placeholder_from_options( jet_smart_filters()->data->content_providers() ),
+				'searchable' => true,
 			]
 		);
 
@@ -520,16 +523,16 @@ class Jet_Smart_Filters_Bricks_Active_Filters extends \Jet_Engine\Bricks_Views\E
 		$this->register_jet_control(
 			'filter_item_remove_offset_top',
 			[
-				'tab'     => 'style',
-				'label'   => esc_html__( 'Offset Top', 'jet-smart-filters' ),
-				'type'    => 'slider',
-				'units'   => [
+				'tab'   => 'style',
+				'label' => esc_html__( 'Offset Top', 'jet-smart-filters' ),
+				'type'  => 'slider',
+				'units' => [
 					'px' => [
 						'min' => 0,
 						'max' => 40,
 					],
 				],
-				'css'     => [
+				'css'   => [
 					[
 						'property' => 'top',
 						'selector' => $css_scheme['filter-remove'],
@@ -541,16 +544,16 @@ class Jet_Smart_Filters_Bricks_Active_Filters extends \Jet_Engine\Bricks_Views\E
 		$this->register_jet_control(
 			'filter_item_remove_offset_right',
 			[
-				'tab'     => 'style',
-				'label'   => esc_html__( 'Offset Right', 'jet-smart-filters' ),
-				'type'    => 'slider',
-				'units'   => [
+				'tab'   => 'style',
+				'label' => esc_html__( 'Offset Right', 'jet-smart-filters' ),
+				'type'  => 'slider',
+				'units' => [
 					'px' => [
 						'min' => 0,
 						'max' => 40,
 					],
 				],
-				'css'     => [
+				'css'   => [
 					[
 						'property' => 'right',
 						'selector' => $css_scheme['filter-remove'],

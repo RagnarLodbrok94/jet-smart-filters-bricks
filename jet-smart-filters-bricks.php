@@ -61,6 +61,11 @@ if ( ! class_exists( 'Jet_Smart_Filters_Bricks' ) ) {
 		 */
 		public function init() {
 
+			if ( $this->has_bricks() && ! function_exists( 'jet_engine' ) ) {
+				add_action( 'admin_notices', array( $this, 'required_plugins_notice' ) );
+				return;
+			}
+
 			require $this->plugin_path( 'includes/bricks-views/manager.php' );
 
 			new \Jet_Smart_Filters\Bricks_Views\Manager();
@@ -103,6 +108,50 @@ if ( ! class_exists( 'Jet_Smart_Filters_Bricks' ) ) {
 				self::$instance = new self;
 			}
 			return self::$instance;
+		}
+
+		/**
+		 * Show recommended plugins notice.
+		 *
+		 * @return void
+		 */
+		public function required_plugins_notice() {
+			$screen = get_current_screen();
+
+			if ( isset( $screen->parent_file ) && 'plugins.php' === $screen->parent_file && 'update' === $screen->id ) {
+				return;
+			}
+
+			$plugin = 'jet-engine/jet-engine.php';
+
+			$installed_plugins      = get_plugins();
+			$is_elementor_installed = isset( $installed_plugins[ $plugin ] );
+
+			if ( $is_elementor_installed ) {
+				if ( ! current_user_can( 'activate_plugins' ) ) {
+					return;
+				}
+
+				$activation_url = wp_nonce_url( 'plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s', 'activate-plugin_' . $plugin );
+
+				$message = sprintf( '<p>%s</p>', esc_html__( 'JetSmartFilters requires JetEngine to be activated.', 'jet-smart-filters' ) );
+				$message .= sprintf( '<p><a href="%s" class="button-primary">%s</a></p>', $activation_url, esc_html__( 'Activate JetEngine Now', 'jet-smart-filters' ) );
+			} else {
+				if ( ! current_user_can( 'install_plugins' ) ) {
+					return;
+				}
+
+				$install_url = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=elementor' ), 'install-plugin_elementor' );
+
+				$message = sprintf( '<p>%s</p>', esc_html__( 'JetSmartFilters requires JetEngine to be installed.', 'jet-smart-filters' ) );
+				$message .= sprintf( '<p><a href="%s" class="button-primary">%s</a></p>', $install_url, esc_html__( 'Install JetEngine Now', 'jet-smart-filters' ) );
+			}
+
+			printf( '<div class="notice notice-warning is-dismissible"><p>%s</p></div>', wp_kses_post( $message ) );
+		}
+
+		public function has_bricks() {
+			return defined( 'BRICKS_VERSION' );
 		}
 	}
 }

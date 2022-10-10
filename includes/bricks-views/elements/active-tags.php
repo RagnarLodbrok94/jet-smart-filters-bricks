@@ -2,6 +2,8 @@
 
 namespace Jet_Smart_Filters\Bricks_Views\Elements;
 
+use Jet_Engine\Bricks_Views\Helpers\Options_Converter;
+
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
@@ -66,10 +68,11 @@ class Jet_Smart_Filters_Bricks_Active_Tags extends \Jet_Engine\Bricks_Views\Elem
 		$this->register_jet_control(
 			'content_provider',
 			[
-				'tab'     => 'content',
-				'label'   => esc_html__( 'Show active filters for:', 'jet-smart-filters' ),
-				'type'    => 'select',
-				'options' => jet_smart_filters()->data->content_providers(),
+				'tab'        => 'content',
+				'label'      => esc_html__( 'Show active filters for:', 'jet-smart-filters' ),
+				'type'       => 'select',
+				'options'    => Options_Converter::remove_placeholder_from_options( jet_smart_filters()->data->content_providers() ),
+				'searchable' => true,
 			]
 		);
 
@@ -550,16 +553,16 @@ class Jet_Smart_Filters_Bricks_Active_Tags extends \Jet_Engine\Bricks_Views\Elem
 		$this->register_jet_control(
 			'tag_clear_border_color',
 			[
-				'tab'   => 'style',
-				'label' => esc_html__( 'Border color', 'jet-smart-filters' ),
-				'type'  => 'color',
-				'css'   => [
+				'tab'      => 'style',
+				'label'    => esc_html__( 'Border color', 'jet-smart-filters' ),
+				'type'     => 'color',
+				'css'      => [
 					[
 						'property' => 'border-color',
 						'selector' => $css_scheme['tag'] . '--clear',
 					],
 				],
-				'required'       => [ 'tag_item_border', '!=', '' ],
+				'required' => [ 'tag_item_border', '!=', '' ],
 			]
 		);
 
