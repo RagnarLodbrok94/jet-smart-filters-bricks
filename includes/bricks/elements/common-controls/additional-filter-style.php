@@ -19,18 +19,9 @@ $this->register_jet_control(
 	'search_items_width',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Input Width', 'jet-smart-filters' ),
-		'type'  => 'slider',
-		'units' => [
-			'px' => [
-				'min' => 0,
-				'max' => 500,
-			],
-			'%'  => [
-				'min' => 0,
-				'max' => 100,
-			],
-		],
+		'label' => esc_html__( 'Input width', 'jet-smart-filters' ),
+		'type'  => 'number',
+		'units' => true,
 		'css'   => [
 			[
 				'property' => 'max-width',
@@ -59,7 +50,7 @@ $this->register_jet_control(
 	'search_items_placeholder_color',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Placeholder Color', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Placeholder color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[
@@ -150,7 +141,7 @@ $this->register_jet_control(
 	[
 		'tab'   => 'style',
 		'type'  => 'separator',
-		'label' => esc_html__( 'Remove Button', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Remove button', 'jet-smart-filters' ),
 	]
 );
 
@@ -159,13 +150,8 @@ $this->register_jet_control(
 	[
 		'tab'   => 'style',
 		'label' => esc_html__( 'Size', 'jet-smart-filters' ),
-		'type'  => 'slider',
-		'units' => [
-			'px' => [
-				'min' => 0,
-				'max' => 50,
-			],
-		],
+		'type'  => 'number',
+		'units' => true,
 		'css'   => [
 			[
 				'property' => 'font-size',
@@ -180,13 +166,8 @@ $this->register_jet_control(
 	[
 		'tab'   => 'style',
 		'label' => esc_html__( 'Horizontal offset', 'jet-smart-filters' ),
-		'type'  => 'slider',
-		'units' => [
-			'px' => [
-				'min' => 0,
-				'max' => 30,
-			],
-		],
+		'type'  => 'number',
+		'units' => true,
 		'css'   => [
 			[
 				'property' => 'right',
@@ -251,10 +232,10 @@ $this->register_jet_control(
 $this->register_jet_control(
 	'more_less_button_alignment',
 	[
-		'tab'   => 'style',
-		'label' => esc_html__( 'Alignment', 'jet-smart-filters' ),
-		'type'  => 'text-align',
-		'css'   => [
+		'tab'      => 'style',
+		'label'    => esc_html__( 'Alignment', 'jet-smart-filters' ),
+		'type'     => 'text-align',
+		'css'      => [
 			[
 				'property' => 'text-align',
 				'selector' => $css_items_moreless_scheme['more-less'],
@@ -379,17 +360,8 @@ $this->register_jet_control(
 	[
 		'tab'   => 'style',
 		'label' => esc_html__( 'Width', 'jet-smart-filters' ),
-		'type'  => 'slider',
-		'units' => [
-			'px' => [
-				'min' => 50,
-				'max' => 500,
-			],
-			'%'  => [
-				'min' => 10,
-				'max' => 100,
-			],
-		],
+		'type'  => 'number',
+		'units' => true,
 		'css'   => [
 			[
 				'property' => 'max-width',
@@ -479,7 +451,7 @@ $this->register_jet_control(
 	[
 		'tab'   => 'style',
 		'type'  => 'separator',
-		'label' => esc_html__( 'Active Items', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Active items', 'jet-smart-filters' ),
 	]
 );
 
@@ -488,13 +460,8 @@ $this->register_jet_control(
 	[
 		'tab'     => 'style',
 		'label'   => esc_html__( 'Gap', 'jet-smart-filters' ),
-		'type'    => 'slider',
-		'units'   => [
-			'px' => [
-				'min' => 0,
-				'max' => 40,
-			],
-		],
+		'type'    => 'number',
+		'units'   => true,
 		'default' => '8px',
 		'css'     => [
 			[
@@ -590,7 +557,7 @@ $this->register_jet_control(
 	[
 		'tab'   => 'style',
 		'type'  => 'separator',
-		'label' => esc_html__( 'Dropdown Body', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Dropdown body', 'jet-smart-filters' ),
 	]
 );
 
@@ -599,13 +566,8 @@ $this->register_jet_control(
 	[
 		'tab'   => 'style',
 		'label' => esc_html__( 'Offset', 'jet-smart-filters' ),
-		'type'  => 'slider',
-		'units' => [
-			'px' => [
-				'min' => 0,
-				'max' => 100,
-			],
-		],
+		'type'  => 'number',
+		'units' => true,
 		'css'   => [
 			[
 				'property' => 'margin-top',
@@ -649,7 +611,7 @@ $this->register_jet_control(
 	'dropdown_body_items_padding',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Items Padding', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Items padding', 'jet-smart-filters' ),
 		'type'  => 'dimensions',
 		'css'   => [
 			[

@@ -66,7 +66,7 @@ if ( ! class_exists( 'Jet_Smart_Filters_Bricks' ) ) {
 				return;
 			}
 
-			require $this->plugin_path( 'includes/bricks-views/manager.php' );
+			require $this->plugin_path( 'includes/bricks/manager.php' );
 
 			new \Jet_Smart_Filters\Bricks_Views\Manager();
 		}

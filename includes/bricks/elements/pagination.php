@@ -14,14 +14,14 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 	public $category = 'jetsmartfilters'; // Use predefined element category 'general'
 	public $name = 'jet-smart-filters-pagination'; // Make sure to prefix your elements
 	public $icon = 'jet-smart-filters-icon-pagination'; // Themify icon font class
-	public $css_selector = '.jet-filters-pagination'; // Default CSS selector
+	public $css_selector = '.jet-filters-pagination__link, .jet-filters-pagination__dots'; // Default CSS selector
 	public $scripts = []; // Script(s) run when element is rendered on frontend or updated in builder
 
 	public $jet_element_render = 'pagination';
 
 	// Return localised element label
 	public function get_label() {
-		return esc_html__( 'JetSmartFilters Pagination', 'jet-smart-filters' );
+		return esc_html__( 'Pagination', 'jet-smart-filters' );
 	}
 
 	// Set builder control groups
@@ -30,7 +30,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 		$this->register_jet_control_group(
 			'section_general',
 			[
-				'title' => esc_html__( 'Content', 'jet-smart-filters' ),
+				'title' => esc_html__( 'General', 'jet-smart-filters' ),
 				'tab'   => 'content',
 			]
 		);
@@ -40,14 +40,6 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			[
 				'title' => esc_html__( 'Controls', 'jet-smart-filters' ),
 				'tab'   => 'content',
-			]
-		);
-
-		$this->register_jet_control_group(
-			'pagination_style',
-			[
-				'title' => esc_html__( 'Pagination', 'jet-smart-filters' ),
-				'tab'   => 'style',
 			]
 		);
 
@@ -133,7 +125,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'enable_prev_next',
 			[
 				'tab'     => 'content',
-				'label'   => esc_html__( 'Enable Prev/Next buttons', 'jet-smart-filters' ),
+				'label'   => esc_html__( 'Enable prev/next buttons', 'jet-smart-filters' ),
 				'type'    => 'checkbox',
 				'default' => true,
 			]
@@ -143,7 +135,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'prev_text',
 			[
 				'tab'      => 'content',
-				'label'    => esc_html__( 'Prev Text', 'jet-smart-filters' ),
+				'label'    => esc_html__( 'Prev text', 'jet-smart-filters' ),
 				'type'     => 'text',
 				'default'  => esc_html__( 'Prev', 'jet-smart-filters' ),
 				'required' => [ 'enable_prev_next', '=', true ],
@@ -154,7 +146,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'next_text',
 			[
 				'tab'      => 'content',
-				'label'    => esc_html__( 'Next Text', 'jet-smart-filters' ),
+				'label'    => esc_html__( 'Next text', 'jet-smart-filters' ),
 				'type'     => 'text',
 				'default'  => esc_html__( 'Next', 'jet-smart-filters' ),
 				'required' => [ 'enable_prev_next', '=', true ],
@@ -211,125 +203,15 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 
 		$this->end_jet_control_group();
 
-		$this->start_jet_control_group( 'pagination_style' );
-
-		$this->register_jet_control(
-			'pagination_bg_color',
-			[
-				'tab'   => 'style',
-				'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
-				'type'  => 'color',
-				'css'   => [
-					[
-						'property' => 'background-color',
-					],
-				],
-			]
-		);
-
-		$this->register_jet_control(
-			'pagination_margin',
-			[
-				'tab'     => 'style',
-				'label'   => esc_html__( 'Margin', 'jet-smart-filters' ),
-				'type'    => 'dimensions',
-				'default' => '0',
-				'css'     => [
-					[
-						'property' => 'margin',
-					],
-				],
-			]
-		);
-
-		$this->register_jet_control(
-			'pagination_padding',
-			[
-				'tab'   => 'style',
-				'label' => esc_html__( 'Padding', 'jet-smart-filters' ),
-				'type'  => 'dimensions',
-				'css'   => [
-					[
-						'property' => 'padding',
-					],
-				],
-			]
-		);
-
-		$this->register_jet_control(
-			'pagination_border',
-			[
-				'tab'   => 'style',
-				'label' => esc_html__( 'Border', 'jet-smart-filters' ),
-				'type'  => 'border',
-				'css'   => [
-					[
-						'property' => 'border',
-					],
-				],
-			]
-		);
-
-		$this->register_jet_control(
-			'pagination_shadow',
-			[
-				'tab'   => 'style',
-				'label' => esc_html__( 'Box shadow', 'jet-smart-filters' ),
-				'type'  => 'box-shadow',
-				'css'   => [
-					[
-						'property' => 'box-shadow',
-					],
-				],
-			]
-		);
-
-		$this->end_jet_control_group();
-
 		$this->start_jet_control_group( 'pagination_items_style' );
-
-		$this->register_jet_control(
-			'pagination_items_typography',
-			[
-				'tab'   => 'style',
-				'label' => esc_html__( 'Typography', 'jet-smart-filters' ),
-				'type'  => 'typography',
-				'css'   => [
-					[
-						'property' => 'typography',
-						'selector' => $css_scheme['pagination-link'],
-					],
-				],
-			]
-		);
-
-		$this->register_jet_control(
-			'pagination_items_bg_color',
-			[
-				'tab'   => 'style',
-				'label' => esc_html__( 'Background', 'jet-smart-filters' ),
-				'type'  => 'color',
-				'css'   => [
-					[
-						'property' => 'background-color',
-						'selector' => $css_scheme['pagination-link'] . ', ' . $css_scheme['pagination-dots'],
-					],
-				],
-			]
-		);
 
 		$this->register_jet_control(
 			'pagination_items_width',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Item Width', 'jet-smart-filters' ),
-				'type'  => 'slider',
-				'units' => [
-					'px' => [
-						'min' => 0,
-						'max' => 200,
-					],
-				],
+				'label' => esc_html__( 'Item width', 'jet-smart-filters' ),
+				'type'  => 'number',
+				'units' => true,
 				'css'   => [
 					[
 						'property' => 'min-width',
@@ -343,62 +225,29 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_items_gap',
 			[
 				'tab'     => 'style',
-				'label'   => esc_html__( 'Gap Between Items', 'jet-smart-filters' ),
-				'type'    => 'slider',
-				'units'   => [
-					'px' => [
-						'min' => 0,
-						'max' => 100,
-					],
-				],
-				'default' => 10,
+				'label'   => esc_html__( 'Gap', 'jet-smart-filters' ),
+				'type'    => 'number',
+				'units'   => true,
+				'default' => '12px',
 				'css'     => [
 					[
 						'property' => 'gap',
+						'selector' => $css_scheme['pagination'],
 					],
 				],
 			]
 		);
 
 		$this->register_jet_control(
-			'pagination_items_alignment',
+			'pagination_items_align_main_axis',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Alignment', 'jet-smart-filters' ),
+				'label' => esc_html__( 'Align main axis', 'jet-smart-filters' ),
 				'type'  => 'justify-content',
 				'css'   => [
 					[
 						'property' => 'justify-content',
-					],
-				],
-			]
-		);
-
-		$this->register_jet_control(
-			'pagination_items_padding',
-			[
-				'tab'   => 'style',
-				'label' => esc_html__( 'Padding', 'jet-smart-filters' ),
-				'type'  => 'dimensions',
-				'css'   => [
-					[
-						'property' => 'padding',
-						'selector' => $css_scheme['pagination-link'] . ', ' . $css_scheme['pagination-dots'],
-					],
-				],
-			]
-		);
-
-		$this->register_jet_control(
-			'pagination_items_border',
-			[
-				'tab'   => 'style',
-				'label' => esc_html__( 'Border', 'jet-smart-filters' ),
-				'type'  => 'border',
-				'css'   => [
-					[
-						'property' => 'border',
-						'selector' => $css_scheme['pagination-link'] . ', ' . $css_scheme['pagination-dots'],
+						'selector' => $css_scheme['pagination'],
 					],
 				],
 			]
@@ -432,7 +281,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_item_bg_color_current',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Background', 'jet-smart-filters' ),
+				'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 				'type'  => 'color',
 				'css'   => [
 					[
@@ -486,7 +335,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			'pagination_item_bg_color_dots',
 			[
 				'tab'   => 'style',
-				'label' => esc_html__( 'Background', 'jet-smart-filters' ),
+				'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 				'type'  => 'color',
 				'css'   => [
 					[
@@ -512,21 +361,7 @@ class Jet_Smart_Filters_Pagination_Widget extends \Jet_Engine\Bricks_Views\Eleme
 			]
 		);
 
-		$this->register_jet_control(
-			'',
-			[
-				'tab'         => 'style',
-				'label'       => esc_html__( '', 'jet-smart-filters' ),
-				'type'        => '',
-				'default'     => '',
-				'description' => esc_html__( '', 'jet-smart-filters' ),
-				'required'    => [ '', '=', '' ],
-			]
-		);
-
 		$this->end_jet_control_group();
-
-
 	}
 
 	// Render element HTML

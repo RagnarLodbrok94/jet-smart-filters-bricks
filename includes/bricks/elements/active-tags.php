@@ -136,7 +136,7 @@ class Jet_Smart_Filters_Bricks_Active_Tags extends \Jet_Engine\Bricks_Views\Elem
 		);
 
 		// Include Additional Providers Settings
-		include jet_smart_filters_bricks()->plugin_path( 'includes/bricks-views/elements/common-controls/additional-providers.php' );
+		include jet_smart_filters_bricks()->plugin_path( 'includes/bricks/elements/common-controls/additional-providers.php' );
 
 		$this->end_jet_control_group();
 

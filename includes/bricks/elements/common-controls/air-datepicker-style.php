@@ -6,7 +6,7 @@ $this->register_jet_control(
 	'calendar_offset_top',
 	[
 		'tab'     => 'style',
-		'label'   => esc_html__( 'Offset Top', 'jet-smart-filters' ),
+		'label'   => esc_html__( 'Offset top', 'jet-smart-filters' ),
 		'type'    => 'slider',
 		'units'   => [
 			'px' => [
@@ -28,7 +28,7 @@ $this->register_jet_control(
 	'calendar_width',
 	[
 		'tab'     => 'style',
-		'label'   => esc_html__( 'Calendar Width', 'jet-smart-filters' ),
+		'label'   => esc_html__( 'Calendar width', 'jet-smart-filters' ),
 		'type'    => 'slider',
 		'units'   => [
 			'px' => [
@@ -198,7 +198,7 @@ $this->register_jet_control(
 	'calendar_header_caption_bg',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Background', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[
@@ -244,7 +244,7 @@ $this->register_jet_control(
 	[
 		'tab'   => 'style',
 		'type'  => 'separator',
-		'label' => esc_html__( 'Navigation Arrows', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Navigation arrows', 'jet-smart-filters' ),
 	]
 );
 
@@ -292,7 +292,7 @@ $this->register_jet_control(
 	'calendar_header_prev_next_bg',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Background', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[
@@ -356,7 +356,7 @@ $this->register_jet_control(
 	'calendar_week_days_bg',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Background', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Background color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[
@@ -460,7 +460,7 @@ $this->register_jet_control(
 	[
 		'tab'   => 'style',
 		'type'  => 'separator',
-		'label' => esc_html__( 'Hover State', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Hover state', 'jet-smart-filters' ),
 	]
 );
 
@@ -531,7 +531,7 @@ $this->register_jet_control(
 	[
 		'tab'   => 'style',
 		'type'  => 'separator',
-		'label' => esc_html__( 'Active State', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Active state', 'jet-smart-filters' ),
 	]
 );
 
@@ -608,7 +608,7 @@ $this->register_jet_control(
 	[
 		'tab'   => 'style',
 		'type'  => 'separator',
-		'label' => esc_html__( 'Current State', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Current state', 'jet-smart-filters' ),
 	]
 );
 
@@ -673,7 +673,7 @@ $this->register_jet_control(
 	'calendar_days_weekend_color',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Weekend Color', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Weekend color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[
@@ -688,7 +688,7 @@ $this->register_jet_control(
 	'calendar_days_other_month_color',
 	[
 		'tab'   => 'style',
-		'label' => esc_html__( 'Other Month Color', 'jet-smart-filters' ),
+		'label' => esc_html__( 'Other month color', 'jet-smart-filters' ),
 		'type'  => 'color',
 		'css'   => [
 			[
